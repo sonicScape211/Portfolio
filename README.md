@@ -1,3 +1,4 @@
+
 # John (JT) Mozingo's Portfolio
 ### Hey welcome! You have found the compilation site for all of my previous work and current projects.
 
@@ -9,3 +10,4 @@
 
 ## Directory
    * Homework 1
+
