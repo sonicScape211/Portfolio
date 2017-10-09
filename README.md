@@ -9,5 +9,5 @@
 
 
 ## Directory
-   * [Homework 1](https://github.com/sonicScape211/sonicScape211.github.io/tree/master/460hw/hw1/index.md)
+   * [Homework 1](https://github.com/sonicScape211/sonicScape211.github.io/tree/NewHomework/460hw/hw1/index.md)
 
