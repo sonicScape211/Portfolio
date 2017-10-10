@@ -64,6 +64,7 @@
 ```
    Later on I would really like to add some JavaScript that will cause the page to automatically scroll to a specified section when the user clicks on a top menu item.
    Lower down on the page I have added a nice banner, which hopefully with the addition of some JavaScript will soon stay in a fixed postion, but allow the lower portion of the page to scroll past the image as if it were in the background.
+   
 ```html
 <div class="banner">
             
@@ -71,7 +72,7 @@
         
 </div>
 ```
-    I have also added elements from Bootstrap here. The coloumn elements make up this entire page, so the content will be flexable and responsive for all devices that access it. I actually had a bit of trouble with this at first. I should have planned everything out a little bit better but I had divided the page into multiple rows for the content, but I found this to cause the page to look messy when changing window sizes, so I refactored the code to have only one row and three columns for all of the content.
+   I have also added elements from Bootstrap here. The coloumn elements make up this entire page, so the content will be flexable and responsive for all devices that access it. I actually had a bit of trouble with this at first. I should have planned everything out a little bit better but I had divided the page into multiple rows for the content, but I found this to cause the page to look messy when changing window sizes, so I refactored the code to have only one row and three columns for all of the content.
 ```html
 <div class="row">
             
