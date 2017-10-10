@@ -12,13 +12,30 @@
     z-index: 0;
 }
 
+#contact-header {
+    position: absolute;
+    bottom: 140px;
+    z-index: 1;
+    text-decoration-color: #86D114;
+}
+
+
+.header-text{
+    color: #195c96;
+    
+}
+
+#banner-image {
+    width: 100%;
+}
+
 .jumbotron {
     padding-top: 10px;
     padding-bottom: 0px;
     margin-bottom: 0px
 }
 
-.homepage-middle-content-strip {
+.middle-content-strip {
     background-color: #E9ECEF;
 }
 .company-discription {
@@ -34,7 +51,7 @@ p.body-text {
     padding-left: 5px;
 }
 
-.background-color {
+.page-margins-background-color {
     background-color: #c9c9c9;
 }
 
