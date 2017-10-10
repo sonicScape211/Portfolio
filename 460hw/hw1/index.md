@@ -6,9 +6,10 @@
    Alright, let's get started!
 
 ## Stage One
-    I started out on this project by creating and initializing a new repo for my GitHub account. I have used GitHub in the past, but I actually only just recently started using Git Bash, though it seems simple enough (I suppose I'll find out...). 
+   I started out on this project by creating and initializing a new repo for my GitHub account. I have used GitHub in the past, but I actually only just recently started using Git Bash, though it seems simple enough (I suppose I'll find out...). 
     Now that I have created a repo to store all of my files I decided to brush up on my HTML and CSS work. I had learned a lot of it during the winter break last year, though after that I didn't have much time to keep using it, so my skills are definitely rusty.
-    After picking up the basics again from a course on Udemy.com, I downloaded Bootstrap and jumped into the documentation on their site. I already had something in mind for my homepage. I really wanted to keep most of the information to one page, I don’t personally enjoy jumping around from page to page on websites, so here I am going to try and keep the layout pleasant and allow the user to move around the front page with a fixed menu bar at the top of the screen.
+   After picking up the basics again from a course on Udemy.com, I downloaded Bootstrap and jumped into the documentation on their site. I already had something in mind for my homepage. I really wanted to keep most of the information to one page, I don’t personally enjoy jumping around from page to page on websites, so here I am going to try and keep the layout pleasant and allow the user to move around the front page with a fixed menu bar at the top of the screen.
+    
 ```html
 <html>
     
@@ -59,9 +60,10 @@
             
             </div>
         </nav>
+
 ```
-    Later on I would really like to add some JavaScript that will cause the page to automatically scroll to a specified section when the user clicks on a top menu item.
-    Lower down on the page I have added a nice banner, which hopefully with the addition of some JavaScript will soon stay in a fixed postion, but allow the lower portion of the page to scroll past the image as if it were in the background.
+   Later on I would really like to add some JavaScript that will cause the page to automatically scroll to a specified section when the user clicks on a top menu item.
+   Lower down on the page I have added a nice banner, which hopefully with the addition of some JavaScript will soon stay in a fixed postion, but allow the lower portion of the page to scroll past the image as if it were in the background.
 ```html
 <div class="banner">
             
@@ -90,8 +92,9 @@
             
             </div>
 ```
-    As you can see from the above snippits of code, I have taken latin phrases from lipsum.com in order to replicate some text content, honestly filling out fake information for this site sounded none to appealing and a waste of coding time. Though perhapts in the future it can be replaced by a customer's desired content!
-    At the (current) bottom of the page is the customer review section. This will be the place for clients to highlight some of their hand-picked customer testimony. The section includes a carousel with three sections for images. This carousel is flanked by four sections for customer blurbs and profile photos.
+   As you can see from the above snippits of code, I have taken latin phrases from lipsum.com in order to replicate some text content, honestly filling out fake information for this site sounded none to appealing and a waste of coding time. Though perhapts in the future it can be replaced by a customer's desired content!
+   At the (current) bottom of the page is the customer review section. This will be the place for clients to highlight some of their hand-picked customer testimony. The section includes a carousel with three sections for images. This carousel is flanked by four sections for customer blurbs and profile photos.
+   
 ```html
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
@@ -139,7 +142,8 @@
     </div>
 </div>
 ```
-    Currently the only sperate page is under the Contact tab on the menu bar. This page contains a similar CSS layout to the homepage and will eventually contain some contact information and responsive text design. The current text imposed on the banner image will stay the same font size no matter what the screen size is.
+   Currently the only sperate page is under the Contact tab on the menu bar. This page contains a similar CSS layout to the homepage and will eventually contain some contact information and responsive text design. The current text imposed on the banner image will stay the same font size no matter what the screen size is.
+    
 ```html
 <html>
 
@@ -220,3 +224,4 @@
     </body>
 
 </html>
+```
