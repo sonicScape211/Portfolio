@@ -139,4 +139,84 @@
     </div>
 </div>
 ```
+    Currently the only sperate page is under the Contact tab on the menu bar. This page contains a similar CSS layout to the homepage and will eventually contain some contact information and responsive text design. The current text imposed on the banner image will stay the same font size no matter what the screen size is.
+```html
+<html>
 
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="SmallBusiness.css">
+        
+        <title>Contact</title>
+        
+    
+    </head>
+    
+    <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-light">
+                
+            <a class="navbar-brand" href="SmallBusiness.html">Your Business Name Here!</a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+            
+                <ul class="navbar-nav">
+                
+                    <li class="navbar-item">
+                        <a class="nav-link" href="SmallBusiness.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    
+                    <li class="navbar-item active">
+                        <a class="nav-link" href="SmallBusiness-ProductsPage.html">Products</a>
+                    </li>
+                    
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">Customer testimony</a>
+                    </li>
+                    
+                    <li class="navbar-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                
+                </ul>
+            
+            </div>
+        </nav>
+        
+        <div class="row">
+           
+            <div class="col-sm-2 page-margins-background-color"></div>
+            
+            <div class="col-sm-8 middle-content-strip">
+                <div>
+                    <img class="img-fluid" id="banner-image" src="SitePhotos/Team-Meeting.jpg" alt="Responsive image">
+                    <div id="contact-header">
+                        <h1 class="display-1 header-text">Looking for a website?</h1>
+                        <p class="display-4 header-text">We can help you with that.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-2 page-margins-background-color">
+                <p>Text</p>
+            </div>    
+        </div>
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    
+    </body>
+
+</html>
