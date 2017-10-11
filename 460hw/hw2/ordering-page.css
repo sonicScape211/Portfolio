@@ -1,0 +1,27 @@
+.ordering-page-container {
+    padding-top: 60px;
+}
+
+#ordering-banner{
+    margin: auto;
+    text-align: center;
+}
+
+#banner-img {
+    padding-top: 56px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+body {
+    background-color: #C9C9C9;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+#card-image {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
