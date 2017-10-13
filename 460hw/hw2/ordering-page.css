@@ -1,0 +1,47 @@
+.ordering-page-container {
+    padding-top: 60px;
+}
+
+#ordering-banner{
+    margin: auto;
+    text-align: center;
+}
+
+#banner-img {
+    padding-top: 56px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+body {
+    background-color: #C9C9C9;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+#card-image {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#checkout-choices {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 15px;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+#signin-selection-checkout {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none;
+}
