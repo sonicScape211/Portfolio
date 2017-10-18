@@ -81,32 +81,58 @@
                         
                         <form>
                             <div class="form-row">
-                              <div class="form-group form-col-md-6">
-                                <label for="guest-email-input">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="yourEmail@sample.com">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                              </div>
-                              <div class="form-group form-col-md-6">
-                                  <label for="guest-phone-contact">Phone number</label>
-                                  <input type="tel" class="form-control" id="guest-phone-number" placeholder="(xxx)xxx-xxxx">
-                              </div>
+                                <div class="form-group form-col-md-6">
+                                    
+                                    <label for="guest-email">Email address</label>
+                                    
+                                    <input type="email" class="form-control" id="guest-email-input" aria-describedby="emailHelp" placeholder="yourEmail@sample.com">
+                                
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                              
+                                </div>
+                              
+                                <div class="form-group form-col-md-6">
+                                    
+                                    <label for="guest-phone-contact">Phone number</label>
+                                    
+                                    <input type="tel" class="form-control" id="guest-phone-number" placeholder="(xxx)xxx-xxxx">
+                                
+                                </div>
                             </div>
+                            
                             <div class="form-row">
+                                
                                 <div class="form-group form-col-md-4">
+                                    
                                     <label for="Address">Billing address</label>
+                                    
                                     <input type="text" class="form-control" id="guest-street-address" placeholder="Enter your address">
+                                
                                 </div>
+                                
                                 <div class="form-group form-col-md-4">
+                                    
                                     <label for="Address">State</label>
+                                    
                                     <input type="text" class="form-control" id="guest-state">
+                                
                                 </div>
+                                
                                 <div class="form-group form-col-md-4">
+                                    
                                     <label for="Address">Zipcode</label>
+                                    
                                     <input type="text" class="form-control" id="guest-zipcode">
+                                
                                 </div>
-                                <button class="btn btn-primary btn-lg" id="guest-sumbit-button">Submit</button>  
+                                
+                                <!--&quot;guest-email&quot;, &quot;guest-phone-number&quot;, &quot;guest-street-address&quot;,&quot;guest-state&quot;,&quot;guest-sipcode&quot;-->
+                                <button type="button" onclick="submitClick(&quot;guest-email-input&quot;, &quot;guest-phone-number&quot;, &quot;guest-street-address&quot;, &quot;guest-state&quot;, &quot;guest-zipcode&quot;, &quot;confirmation-page&quot;)" class="btn btn-primary btn-lg" id="guest-sumbit-button">Submit</button>  
+                            
                             </div>
+                        
                         </form>
+                    
                     </div>
                     
                     <div class="hidden" id="checkout-user-signin">
@@ -131,6 +157,13 @@
                         </form>
                         
                     </div>
+                    
+                    <div id="confirmation-container">
+                        <p class="hidden" id="confirmation-page">
+                            
+                        </p>
+                    </div>
+                    
                 </div>
             </div>
             
