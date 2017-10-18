@@ -28,40 +28,21 @@ $('a').on('click', function(event) {
         });
     }
 });
-//Function to reset the display of an element by its ID.
-function show(a) {
-    //What the fuck does this even do? Find out...
-    "use strict";
-    document.getElementById(a).style.display = "block";
 
-}
-
-function hide(a) {
+//This function will take in:
+// a & b : elements to be swapped
+// c & d : the buttons to be disabled to avoid logical errors created
+// by the users while switching between views.
+function swapVisibility(a, b, c, d) {
     "use strict";
-    document.getElementById(a).style.display = "none";
-}
-
-function checkIfElementIsVisible(a) {
-    "use strict";
-    if (document.getElementById(a).style.display === "block") {
-        return true;
-    } else {
-        return false;
+    $(a).toggle();
+    $(b).toggle();
+    $(c).prop('disabled', function(i, v) {return !v});
+    $(d).prop('disabled', function(i, v) {return !v});
+    if(confirmpage_is_visible){
+        $('#confirmation-page').hide();
     }
-}
-
-function swapVisibility(a, b) {
-    "use strict";
     
-    //if the element is visible hide it.
-    if (checkIfElementIsVisible(a)) {
-        hide(a);
-        show(b);
-    }
-    else {
-        show(a);
-        hide(b);
-    }
 }
 
 //get and store the customer contact information into an array and start the 
@@ -92,7 +73,7 @@ function createContactConfirmationPage(confirmation_page) {
     
     
     document.getElementById(confirmation_page).innerHTML = "Email: " + checkout_information[0] + "<br>" + "Phone Number: " + checkout_information[1] + "<br>" + "Street Address: " + checkout_information[2] + "<br>" + "State: " + checkout_information[3] + "<br>" + "Zipcode: " + checkout_information[4];
-    show(confirmation_page);
+    $('#confirmation-page').show();
     //flag that the confirm page is up.
     confirmpage_is_visible = true;
 }

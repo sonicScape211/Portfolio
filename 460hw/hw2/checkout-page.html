@@ -70,10 +70,10 @@
                     </div>
                     <div id="signin-selection-checkout">
                         <!--hide(&quot;returning-user-button&quot;);-->
-                        <button onclick="swapVisibility(&quot;checkout-user-signin&quot;, &quot;guest-registration-container&quot;);" id="returning-user-button">Sign In</button>
+                        <button disabled="True" onclick="swapVisibility(&quot;#checkout-user-signin&quot;, &quot;#guest-registration-container&quot;, &quot;#returning-user-button&quot;, &quot;#guest-user-button&quot;)" id="returning-user-button">Sign In</button>
                         <!--Had some trouble here finding out how to pass in this string from html to the js-->
                         <!--hide(&quot;guest-user-button&quot;);-->
-                        <button onclick="swapVisibility(&quot;guest-registration-container&quot;, &quot;checkout-user-signin&quot;);" id="guest-user-button">Proceed As Guest</button>
+                        <button onclick="swapVisibility(&quot;#guest-registration-container&quot;, &quot;#checkout-user-signin&quot;, &quot;#guest-user-button&quot;, &quot;#returning-user-button&quot;)" id="guest-user-button">Proceed As Guest</button>
                     </div>
                     <div class="hidden" id="guest-registration-container">
                         <h1 class="display-4">Great, we will just need some contact information from you now.</h1>
@@ -135,7 +135,7 @@
                     
                     </div>
                     
-                    <div class="hidden" id="checkout-user-signin">
+                    <div id="checkout-user-signin">
                         
                         <h1 class="display-4">Welcome back! We are excited to get working with you again!</h1>
                         <hr>
