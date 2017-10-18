@@ -10,6 +10,23 @@
 .banner {
     
     z-index: 0;
+    
+}
+
+#homepage-banner-container {
+        
+}
+
+#homepage-banner-image {
+    
+}
+
+.row {
+    z-index: 1;
+}
+
+#banner-image {
+    width: 100%;
 }
 
 #contact-header {
@@ -25,9 +42,6 @@
     
 }
 
-#banner-image {
-    width: 100%;
-}
 
 .jumbotron {
     padding-top: 10px;
