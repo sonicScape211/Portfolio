@@ -8,8 +8,51 @@ namespace Calculator
 {
     class Calculator
     {
+
+        private IStackADT stack = new LinkedStack();
+
         static void Main(string[] args)
         {
+            Calculator app = new Calculator();
+            //Set the flag for if the calculator should close.
+            bool playAgain = true;
+            Console.Write("\nPostfix Calculator. Recognizes these operators: + - * /");
+            while (playAgain)
+            {
+                playAgain = app.doCalculation();
+            }
+            Console.Write("Bye.");
+        }
+
+        private bool doCalculation()
+        {
+            Console.Write("Please enter q to quit\n");
+            String input = "2 2 +";
+            //Simple user prompt.
+            Console.Write("> ");
+            //Get the tokenized user input.
+            input = Console.ReadLine();
+
+            //Check to see if the user wants to quit the program.
+            if (input.StartsWith("q") || input.StartsWith("Q"))
+            {
+                //Quit.
+                return false;
+            }
+
+            String output = "4";
+            try
+            {
+                output = evaluatePostFixInput(input);
+            }
+            catch (ArgumentException e)
+            {
+                //Set the output to print the exception message.
+                output = e.Message;
+            }
+
+            Console.Write("\n\t>>> " + input + " = " + output + "\n");
+            return true;
         }
     }
 
