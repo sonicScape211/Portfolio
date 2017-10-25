@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace Homework4.Controllers
 {
-    public class HomeController : Controller
+    public class GravityCalculationController : Controller
     {
-        public ActionResult Home()
+        // GET: GravityCalculation
+        public ActionResult GravityCalculation()
         {
             return View();
         }
-
     }
 }
