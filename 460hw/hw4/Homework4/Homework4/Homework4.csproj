@@ -144,6 +144,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GravityCalculationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoanCalculatorController.cs" />
     <Compile Include="Controllers\TemperatureAdjustmentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -188,6 +189,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\GravityCalculation\GravityFormInformation.cshtml" />
     <Content Include="Views\TemperatureAdjustment\TemperatureAdjustment.cshtml" />
+    <Content Include="Views\LoanCalculator\LoanCalculator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
