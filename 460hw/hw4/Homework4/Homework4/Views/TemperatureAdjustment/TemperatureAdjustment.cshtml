@@ -3,5 +3,38 @@
     ViewBag.Title = "TemperatureAdjustment";
 }
 
-<h2>TemperatureAdjustment</h2>
+<h2>Temperature Adjustment Calculator</h2>
 
+<br />
+
+<div class="row">
+    <div class="col-sm-4">
+       
+    </div>
+    <div class="col-sm-8">
+        <h4>Welcome to the Temperature Adjustment Calculator!</h4>
+        <p>
+            If you are a new homebrewer or a seasoned vet of the trade it can sometimes be tricky to keep all of these
+            conversions in your head. Thats why we are here to provide your gravity adjustment based on the temperature of
+            you brew. Never be mislead again! 
+        </p>
+        <form method="post" action="~/TemperatureAdjustment/TemperatureAdjustment">
+            <input class="form-control" type="text" name="gravity" placeholder="Your Gravity (Ex. 1.056)" />
+            <br />
+
+            <input class="form-control" type="text" name="temperature" placeholder="Your Temp (Ex. 75.6)" />  
+            <br />
+
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+        <br />
+
+        <div class="alert alert-info" role="alert" display ="none">
+            <h5>Your unadjusted gravity was: @ViewBag.gravity</h5>
+            <h5>Your new gravity: @ViewBag.adjustedGravity</h5>
+        </div>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+</div>
