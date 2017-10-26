@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "GravityCalculation";
+}
+
+<h2>Gravity Calculator</h2>
+<br />
+
+<div class="row">
+    <div class="col-sm-4">
+        <img class="img-responsive" src="~/Content/Photos/homebrew-station.jpg" />
+    </div>
+    <div class="col-sm-8">
+        <h4>Welcome to the final gravity calculator!</h4>
+        <p>As a new brewer, you already have enough to worry about with cleaning, timing, making sure your aren't skipping steps. 
+           This tool is here to take the guess work out of finding the approximate alcohol content of your finished homebrew!</p>
+        <form method="post" action="~/GravityCalculation/GravityFormInformation">
+            <input class="form-control" type="text" name="original-gravity" placeholder ="Original Gravity (Ex. 1.056)" />
+            
+             <input type="radio" name="temperature-correction"> Temperature Correction?
+            
+            <input class="form-control" type="text" placeholder="Temp. at Hydrometer Reading Time" data-container="body" 
+                   data-toggle="popover" data-placement="right" data-content="This will adjust your gravity based on the temperature of your brew at the time of reading."/>
+
+            <br />
+        
+            <input class="form-control" type="text" name="specific-gravity" placeholder="Specific Gravity (Ex. 1.010)" />
+           
+            <input type="radio" name="temperature-correction"> Temperature Correction?
+            
+            <input class="form-control" type="text" placeholder="Temp. at Hydrometer Reading Time" />
+        
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+        <br />
+
+        <div class="alert alert-info" role="alert">
+            <h5>This will be for the output.</h5>
+        </div>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+</div>
+
