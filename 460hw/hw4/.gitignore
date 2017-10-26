@@ -32,6 +32,9 @@ _ReSharper*/
 #Ignore packages directory
 Packages/
 
+#Visual Studio cache
+.vs/
+
 #Allow NuGet.exe
 !NuGet.exe
 
