@@ -3,5 +3,60 @@
     ViewBag.Title = "LoanCalculator";
 }
 
-<h2>LoanCalculator</h2>
+<h2>Loan Calculator</h2>
 
+<br />
+
+<div class="row">
+    <div class="col-sm-4">
+        
+    </div>
+    <div class="col-sm-8">
+        <h4>Welcome to the Loan Calculator!</h4>
+        <p>
+            As a new brewer, you already have enough to worry about with cleaning, timing, making sure your aren't skipping steps.
+            This tool is here to take the guess work out of finding the approximate alcohol content of your finished homebrew!
+        </p>
+        <form method="post" action="~/LoanCalculator/LoanCalculator">
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input class="form-control" type="text" name="loan-amount" placeholder="Loan Amount (Ex. 12000.00)" />
+            </div>
+
+            <div>
+                <p>@ViewBag.loanAmountError</p>
+            </div>
+
+            <br />
+
+            <div class="input-group">
+                <span class="input-group-addon">%</span>
+                <input class="form-control" type="text" name="interest-rate" placeholder="Interest Rate (Ex. 5.00)" required/>
+            </div>
+
+            <div>
+                <p>@ViewBag.interestRateError</p>
+            </div>
+
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">Month(s)</span>
+                <input class="form-control" type="text" name="term-length" placeholder="Term Length in Months(Ex. 18)" required />
+
+            </div>
+
+            <div>
+                <p>@ViewBag.termLengthError</p>
+            </div>
+
+            <br />
+            <button type="submit" class="btn btn-primary" name="submit">Calculate</button>
+            
+        </form>
+        <br />
+
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+</div>

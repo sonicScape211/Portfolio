@@ -27,11 +27,5 @@ namespace Homework4.Controllers
             ViewData["abv"] = ((float.Parse(originalGravity) - float.Parse(specificGravity)) * 131).ToString(); 
             return View();
         }
-        //[HttpPost]
-        //public ActionResult GravityCalculation(string originalGravity)
-        //{
-          //  Debug.WriteLine($"{originalGravity}");
-           // return View();
-        //}
     }
 }
