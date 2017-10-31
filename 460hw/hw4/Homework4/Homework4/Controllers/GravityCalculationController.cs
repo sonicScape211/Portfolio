@@ -24,7 +24,7 @@ namespace Homework4.Controllers
             ViewBag.originalGravity = originalGravity;
             ViewBag.specificGravity = specificGravity;
 
-            ViewData["abv"] = ((float.Parse(originalGravity) - float.Parse(specificGravity)) * 131).ToString(); 
+            ViewData["abv"] = Math.Round(((float.Parse(originalGravity) - float.Parse(specificGravity)) * 131), 2).ToString(); 
             return View();
         }
     }

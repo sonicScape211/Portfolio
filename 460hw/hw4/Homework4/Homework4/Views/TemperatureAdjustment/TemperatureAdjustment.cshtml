@@ -25,11 +25,11 @@
             <input class="form-control" type="text" name="temperature" placeholder="Your Temp (Ex. 75.6)" />  
             <br />
 
-            <input type="submit" name="submit" value="Submit" />
+            <button type="submit" class="btn btn-primary submitButton" name="submit">Submit</button>
         </form>
         <br />
 
-        <div class="alert alert-info" role="alert" display ="none">
+        <div id="resultDisplay" display ="none">
             <h5>Your unadjusted gravity was: @ViewBag.gravity</h5>
             <h5>Your new gravity: @ViewBag.adjustedGravity</h5>
         </div>
