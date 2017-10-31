@@ -70,3 +70,7 @@ _vti_pvt/
 
 #Ignore private folder
 /Private/
+
+#Ignore local DB files
+*.mdf
+*.ldf
