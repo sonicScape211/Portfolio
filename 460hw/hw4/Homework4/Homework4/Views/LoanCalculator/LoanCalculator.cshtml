@@ -14,13 +14,15 @@
     <div class="col-sm-8">
         <h4>Welcome to the Loan Calculator!</h4>
         <p>
-            As a new brewer, you already have enough to worry about with cleaning, timing, making sure your aren't skipping steps.
-            This tool is here to take the guess work out of finding the approximate alcohol content of your finished homebrew!
+            Well it doesn't quite follow the theme of brewing, but here you are! A basic loan calculator. Given the amount of your loan, the percentage
+            of its interest rate and the length of your term you will be able to find out exactly how much you will need to pay off each month. Remember!
+            The more you pay now, the sooner you can start putting that hard earned software engineering money towards more brewing equipment. Eyes on the
+            prize!
         </p>
         <form method="post" action="~/LoanCalculator/LoanCalculator">
             <div class="input-group">
                 <span class="input-group-addon">$</span>
-                <input class="form-control" type="text" name="loan-amount" placeholder="Loan Amount (Ex. 12000.00)" />
+                <input class="form-control" type="text" name="loanAmount" placeholder="Loan Amount (Ex. 12000.00)" />
             </div>
 
             <div>
@@ -31,7 +33,7 @@
 
             <div class="input-group">
                 <span class="input-group-addon">%</span>
-                <input class="form-control" type="text" name="interest-rate" placeholder="Interest Rate (Ex. 5.00)" required/>
+                <input class="form-control" type="text" name="interestRate" placeholder="Interest Rate (Ex. 5.00)" required/>
             </div>
 
             <div>
@@ -41,7 +43,7 @@
             <br />
             <div class="input-group">
                 <span class="input-group-addon">Month(s)</span>
-                <input class="form-control" type="text" name="term-length" placeholder="Term Length in Months(Ex. 18)" required />
+                <input class="form-control" type="text" name="termLength" placeholder="Term Length in Months(Ex. 18)" required />
 
             </div>
 

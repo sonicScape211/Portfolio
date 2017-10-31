@@ -16,7 +16,7 @@ namespace Homework4.Controllers
         }
 
         [HttpPost]
-        public ActionResult LoanCalculator(FormCollection form)
+        public ActionResult LoanCalculator(string loanAmount, string interestRate, int? termLength)
         {
             //ViewBag.RequestMethod = "POST";
             double loan;
@@ -28,19 +28,18 @@ namespace Homework4.Controllers
 
             try
             {
-                loan = double.Parse(form.Get(0));
+                loan = double.Parse(loanAmount);
+                
             }
             catch
             {
-                Debug.WriteLine("In the catch statment.");
                 ViewBag.loanAmountError = numericalErrorMessage;
                 return View();
-                //LoanCalculator("loanAmountError");
             }
 
             try
             {
-                rate = double.Parse(form.Get(1));
+                rate = double.Parse(interestRate);
             }
             catch
             {
@@ -50,14 +49,38 @@ namespace Homework4.Controllers
 
             try
             {
-                term = double.Parse(form.Get(2));
+                term = (double) termLength;
             }
             catch
             {
                 ViewBag.termLengthError = numericalErrorMessage;
                 return View();
             }
+            TempData["termLength"] = term;
+            TempData["interestRate"] = rate;
+            TempData["loanAmount"] = loan;
+            calculatorLogic(loan, rate, term);
             return RedirectToAction("ResultPage");
+        }
+
+        public ActionResult ResultPage()
+        {
+            //Pass the TempData that was stored in calculatorLogic function to the viewBag for use.
+            ViewBag.loanPaymentResult = TempData["paymentAmount"];
+            ViewBag.termLength = TempData["termLength"];
+            ViewBag.interestRate = TempData["interestRate"];
+            ViewBag.loanAmount = TempData["loanAmount"];
+            return View();
+        }
+
+        public double calculatorLogic(double loanAmount, double interestRate, double termLength)
+        {
+            interestRate = interestRate * .01;
+            double negitiveTermLength = termLength - (termLength * 2);
+            double result = loanAmount * (interestRate / (1 - (Math.Pow((1 + interestRate), negitiveTermLength))));
+            //Store the result in TempData in order to pass data to another method in the controller.
+            TempData["paymentAmount"] = Math.Round(result, 2);
+            return result;
         }
 
     }
