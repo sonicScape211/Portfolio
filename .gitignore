@@ -30,10 +30,10 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 
 #Visual Studio cache
-.vs/
+/.vs/
 
 #Ignore packages directory
-Packages/
+/Packages/
 
 #Allow NuGet.exe
 !NuGet.exe
