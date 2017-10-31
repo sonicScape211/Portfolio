@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "LoanCalculator";
+}
+
+<h2>Loan Calculator</h2>
+
+<br />
+
+<div class="row">
+    <div class="col-sm-4">
+        
+    </div>
+    <div class="col-sm-8">
+        <h4>Welcome to the Loan Calculator!</h4>
+        <p>
+            Well it doesn't quite follow the theme of brewing, but here you are! A basic loan calculator. Given the amount of your loan, the percentage
+            of its interest rate and the length of your term you will be able to find out exactly how much you will need to pay off each month. Remember!
+            The more you pay now, the sooner you can start putting that hard earned software engineering money towards more brewing equipment. Eyes on the
+            prize!
+        </p>
+        <form method="post" action="~/LoanCalculator/LoanCalculator">
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input class="form-control" type="text" name="loanAmount" placeholder="Loan Amount (Ex. 12000.00)" />
+            </div>
+
+            <div>
+                <p>@ViewBag.loanAmountError</p>
+            </div>
+
+            <br />
+
+            <div class="input-group">
+                <span class="input-group-addon">%</span>
+                <input class="form-control" type="text" name="interestRate" placeholder="Interest Rate (Ex. 5.00)" required/>
+            </div>
+
+            <div>
+                <p>@ViewBag.interestRateError</p>
+            </div>
+
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">Month(s)</span>
+                <input class="form-control" type="text" name="termLength" placeholder="Term Length in Months(Ex. 18)" required />
+
+            </div>
+
+            <div>
+                <p>@ViewBag.termLengthError</p>
+            </div>
+
+            <br />
+            <button type="submit" class="btn btn-primary" name="submit">Calculate</button>
+            
+        </form>
+        <br />
+
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+</div>
