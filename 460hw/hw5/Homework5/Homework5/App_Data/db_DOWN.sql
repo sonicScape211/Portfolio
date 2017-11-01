@@ -1,8 +1,8 @@
 IF EXISTS
 (
     SELECT *
-    FROM INFORMATION_SCHEMA
-    WHERE table_name = 'db_UP' AND table_schema = 'dbo'
+    FROM sys.tables
+    WHERE tables.name = 'db_UP'
 )
 BEGIN
     DROP TABLE dbo.db_UP
