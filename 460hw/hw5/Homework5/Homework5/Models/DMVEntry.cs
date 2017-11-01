@@ -10,6 +10,8 @@ namespace Homework5.Models
     {
         public int ID { get; set; }
 
+        public int LicenseNumber { get; set; }
+
         public DateTime DateOfBirth { get; set; }
 
         public string FullName { get; set; }
