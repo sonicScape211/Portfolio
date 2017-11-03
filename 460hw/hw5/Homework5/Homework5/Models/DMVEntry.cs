@@ -17,7 +17,7 @@ namespace Homework5.Models
         public string FullName { get; set; }
 
         public string StreetAddress { get; set; }
-        
+
         public string City { get; set; }
 
         public string State { get; set; }
@@ -25,6 +25,13 @@ namespace Homework5.Models
         public int Zipcode { get; set; }
 
         public DateTime SignedDate { get; set; }
+
+        
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}: License Number = {LicenseNumber}";
+        }
     }
 
 }

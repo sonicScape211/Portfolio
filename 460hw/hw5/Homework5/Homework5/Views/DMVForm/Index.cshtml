@@ -1,0 +1,104 @@
+﻿<!--Specify the Model we will be using for this view.-->
+@model IEnumerable<Homework5.Models.DMVEntry>
+
+@{
+    ViewBag.Title = "DMV Form";
+}
+
+<h2>DMVForm</h2>
+
+<p>
+    <!--Link to create a new DMV Form Entry.-->
+    @Html.ActionLink("Create New Entry", "Create")
+</p>
+<!--Table with a hover effect over the elements and a boarder. From Bootstrap-->
+<table class="table table-hover table-boardered">
+    <thead>
+        <tr>
+            <th scope="col">
+                <!--The required razor code for getting elements out of the model class
+                    refed at the top of the page.-->
+                @Html.DisplayNameFor(model => model.LicenseNumber)
+            </th>
+
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.StreetAddress)
+            </th>
+
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Zipcode)
+            </th>
+
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.SignedDate)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <!--Razor code for added every element already found in the db under the Model.-->
+        @foreach (var item in Model) {
+            <tr>
+                <th scope="row">
+                    @Html.DisplayFor(modelItem => item.LicenseNumber)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.StreetAddress)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zipcode)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.SignedDate)
+                </td>
+
+                <td>
+                    <!--Links for editing that item (id = item.ID)
+                        Will take us to the Edit, Details, and Delete pages
+                        respectivly.-->
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+

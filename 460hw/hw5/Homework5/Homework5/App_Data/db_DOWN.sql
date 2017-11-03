@@ -2,8 +2,8 @@ IF EXISTS
 (
     SELECT *
     FROM sys.tables
-    WHERE tables.name = 'db_UP'
+    WHERE tables.name = 'DMVEntries'
 )
 BEGIN
-    DROP TABLE dbo.db_UP
+    DROP TABLE dbo.DMVEntries
 END
