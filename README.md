@@ -10,4 +10,8 @@
 
 ## Directory
    * [Homework 1](460hw/hw1)
+   * [Homework 2](460hw/hw2)
+   * [Homework 3](460hw/hw3)
+   * [Homework 4](460hw/hw4)
+   * [Homework 5](460hw/hw5)
 
