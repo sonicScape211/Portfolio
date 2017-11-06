@@ -104,4 +104,4 @@ Overall I really enjoyed working on this project and know that what I have done 
 
 [Previous Page](../hw1) [Next Page](../hw3)
 
-[checkout-page]: (/LabScreenShots/checkoutpage.PNG)
+[checkout-page]: (/LabScreenShots/checkoutpage.PNG "This photo")
