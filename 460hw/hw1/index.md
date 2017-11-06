@@ -226,3 +226,7 @@
 
 </html>
 ```
+
+[Back to Homepage](../..)
+
+[Next Page](../hw2)
