@@ -118,4 +118,4 @@ Here we have an example of a very useful built in method for C# which was the `.
   [Previous](../hw2)
   [Next](../hw4)
   
-  ![alt text](/CalculatorScreenShots/ItWorks!.png "This is it")
+![alt text](/CalculatorScreenShots/ItWorks!.png "This is it")
