@@ -26,5 +26,22 @@ namespace Homework5.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        //Validate the AntiForgeryToken incoming from the post request.
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "LicenseNumber, DateOfBirth, FullName, StreetAddress, City, State, Zipcode, SignedDate")] DMVEntry newEntry)
+        {
+            if (ModelState.IsValid)
+            {
+                //Add the new entry to the IEnumerable list.
+                db.DMVEntries.Add(newEntry);
+                db.SaveChanges();
+                //Return the updated view.
+                return RedirectToAction("Index");
+            }
+            return View(newEntry);
+        }
+
     }
 }

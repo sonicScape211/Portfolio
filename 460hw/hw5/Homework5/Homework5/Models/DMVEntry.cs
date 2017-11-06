@@ -13,13 +13,13 @@ namespace Homework5.Models
         public int LicenseNumber { get; set; }
 
         public DateTime DateOfBirth { get; set; }
-
+        [Required]
         public string FullName { get; set; }
-
+        [Required]
         public string StreetAddress { get; set; }
-
+        [Required]
         public string City { get; set; }
-
+        [Required]
         public string State { get; set; }
 
         public int Zipcode { get; set; }
