@@ -1,6 +1,11 @@
 # JavaScript, jQuery, User Input & Some Responsive Design
 ## Homework #2
 
+[Back to the Homepage](../../)
+
+[Previous](../hw3)
+[Next](../hw5)
+
 ### Overview
 For the second assignment we will be working on learning how JavaScript and jQuery can allow us to create some really awesome responsive features in our websites, take some information from the user and also be able to do something with that information! We will also be working on some aspects of our version control skills including : `branching`, `merging` and `checkout`. Alright lets jump into what we have done with this!
 
@@ -102,6 +107,6 @@ Overall I really enjoyed working on this project and know that what I have done 
 
 [Back to Homepage](../..)
 
-[Previous Page](../hw1) [Next Page](../hw3)
+[Previous](../hw1) [Next](../hw3)
 
-[checkout-page]: (/LabScreenShots/checkoutpage.PNG "This photo")
+[checkout-page]: /LabScreenShots/checkoutpage.PNG "This photo"

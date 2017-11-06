@@ -2,6 +2,11 @@
 
 ## Homework #3
 
+[Back to the Homepage](../../)
+
+  [Previous](../hw2)
+  [Next](../hw4)
+
 ### Overveiw
 
 For this assignment we will be working within the Visual Studio IDE. I have really been looking forward to learning C# and beginning to understand how to make my way around another professional IDE. I have spent most of my time working in Eclipse with Java so I don't think the transition will be too difficult.
@@ -107,4 +112,9 @@ Here we have an example of a very useful built in method for C# which was the `.
   
   Really other then the issue of not having a built in Scanner class and needing to write it myself, the transition from Java to C# went very smooth! I will definatly enjoy working in this language more over the school year!
   
-  ![Caculator in Action](../CalculatorScreenShots/ItWorks!.PGN)
+  [Back to the Homepage](../../)
+
+  [Previous](../hw2)
+  [Next](../hw4)
+  
+  ![alt text](../CalculatorScreenShots/ItWorks!.PGN "This is it")

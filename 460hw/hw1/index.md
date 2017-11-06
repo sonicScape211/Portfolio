@@ -1,6 +1,10 @@
 # HTML, CSS & BOOTSTRAP
 ## Homework #1
 
+[Back to Homepage](../..)
+
+[Next Page](../hw2)
+
 ## Overview
    This is the first assignment for Western Oregon's Software Engineering I course. I am required to create a basic webpage on a subject of interest to me using HTML, CSS and Bootstrap. I have worked a bit within the first two items here, although this will be my first experiece working with Bootstrap. For my topic I have chosen to create a generic modern webpage layout targeting small businesses as throughout this course I will be working towards developing a small, freelance website development business to boost my resume and provide some extra income this year.
    Alright, let's get started!
