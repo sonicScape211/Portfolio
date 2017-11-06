@@ -66,6 +66,7 @@ function swapVisibility(a, b, c, d) {
     
 }
 ```
+
 ### User Input and Website Response
 Then for the last section of the homework reqirements I took the user input from the guest checkout form, stored the information into an array, retrieved that information and inserted an HTML table into the page, below the form, to display the users contact information!
 
@@ -104,10 +105,15 @@ function createContactConfirmationPage(confirmation_page) {
 }
 ```
 
+![alt text](LabScreenShots/checkoutpageguest.PNG "Guest Checkout")
+
 Overall I really enjoyed working on this project and know that what I have done here I will be coming back to complete on my own time (or if I'm lucky, as a starting point for another lab to add additional functionality to this simple webpage).
+### Orderpage Screen Shot
+![alt text](LabScreenShots/orderpage.PNG "Order Page")
 
 [Back to Homepage](../..)
 
 [Previous](../hw1) [Next](../hw3)
 
-[checkout-page]: /LabScreenShots/checkoutpage.PNG "This photo"
+
+[checkout-page]:LabScreenShots/checkoutpage.PNG "This photo"
