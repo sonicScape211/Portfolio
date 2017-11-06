@@ -1,5 +1,6 @@
 # HTML, CSS & BOOTSTRAP
 ## Homework #1
+[Homework Repo](https://github.com/sonicScape211/sonicScape211.github.io/tree/master/460hw/hw1)
 
 [Back to Homepage](../..)
 

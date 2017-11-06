@@ -1,7 +1,7 @@
  # ASP .Net MVC 5, Razor and More C#!
 
 ## Homework #4
-[Homework Repo](https://github.com/sonicScape211/sonicScape211.github.io/tree/master/460hw/hw3)
+[Homework Repo](https://github.com/sonicScape211/sonicScape211.github.io/tree/master/460hw/hw4)
 
 [Back to the Homepage](../../)
 

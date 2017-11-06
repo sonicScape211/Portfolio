@@ -1,6 +1,7 @@
 # Introduction to C#, Learning to Move in Visual Studio, XML Comments and Java Translation
 
 ## Homework #3
+[Homework Repo](https://github.com/sonicScape211/sonicScape211.github.io/tree/master/460hw/hw3)
 
 [Back to the Homepage](../../)
 
