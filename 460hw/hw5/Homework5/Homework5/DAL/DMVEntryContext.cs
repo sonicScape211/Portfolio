@@ -14,7 +14,7 @@ namespace Homework5.DAL
        {}
 
         //Create the list of records within the database.
-        public virtual DbSet<DMVEntry> DMVRecords { get; set; }
+        public virtual DbSet<DMVEntry> DMVEntries { get; set; }
 
     }
 }

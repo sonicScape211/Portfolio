@@ -208,6 +208,7 @@
     <Content Include="Views\Example\Edit.cshtml" />
     <Content Include="Views\Example\Index.cshtml" />
     <Content Include="Views\DMVForm\Index.cshtml" />
+    <Content Include="Views\DMVForm\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -19,7 +19,12 @@ namespace Homework5.Controllers
         public ActionResult Index()
         {
             //Show the list within the DMV record from the DMVEntryContext class in the DAL.
-            return View(db.DMVRecords.ToList());
+            return View(db.DMVEntries.ToList());
+        }
+
+        public ActionResult Create()
+        {
+            return View();
         }
     }
 }
