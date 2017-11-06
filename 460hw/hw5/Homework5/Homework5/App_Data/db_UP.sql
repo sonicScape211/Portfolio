@@ -10,7 +10,7 @@ CREATE TABLE [dbo].[DMVEntries] (
     [State]         NVARCHAR (MAX) NOT NULL,
     [Zipcode]       INT            NOT NULL,
     [SignedDate]    DATETIME       NULL,
-    /*CONSTRAINT [PK_dbo.DMVEntries] PRIMARY KEY CLUSTERED ([ID] ASC)*/
+   
 );
 
 INSERT INTO dbo.DMVEntries(LicenseNumber, DateOfBirth, FullName, StreetAddress, City, State, Zipcode, SignedDate) VALUES
