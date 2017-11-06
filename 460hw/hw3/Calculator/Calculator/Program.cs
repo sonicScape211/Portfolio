@@ -39,7 +39,7 @@ namespace Calculator
         private bool doCalculation()
         {
             Console.Write("Please enter q to quit\n");
-            String input = "2 2 +";
+            string input = "2 2 +";
             //Simple user prompt.
             Console.Write("> ");
             //Get the tokenized user input.
@@ -52,7 +52,7 @@ namespace Calculator
                 return false;
             }
 
-            String output = "4";
+            string output = "4";
             try
             {
                 output = evaluatePostFixInput(input);
@@ -74,7 +74,7 @@ namespace Calculator
         /// </summary>
         /// <param name="input">String of the users input.</param>
         /// <returns>String representation of the equation result.</returns>
-        public String evaluatePostFixInput(String input)
+        public string evaluatePostFixInput(string input)
         {
             if (input == null || input.Equals(""))
             {
@@ -83,7 +83,7 @@ namespace Calculator
             //Clear the stack. ie any old data.
             stack.clear();
 
-            String s;   //Temp var for token read.
+            string s;   //Temp var for token read.
             double a;   //Temp var for operand.
             double b;   //...for operand.
             double c;   //...for answer.
@@ -132,7 +132,7 @@ namespace Calculator
         /// <param name="b">Double Second Number</param>
         /// <param name="s">String Mathematical Operator</param>
         /// <returns></returns>
-        public double doOperation(double a, double b, String s)
+        public double doOperation(double a, double b, string s)
         {
             double c = 0.0;
             if (s.Equals("+"))
@@ -172,7 +172,7 @@ namespace Calculator
     /// </summary>
     class Scanner
     {
-        private String[] userInput;
+        private string[] userInput;
         private int pointer;
         private bool hasNextFlag = false;
         private bool hasNextDoubleFlag = false;
@@ -181,7 +181,7 @@ namespace Calculator
         /// Take the input and parse into substrings then store into String[] userInput.
         /// </summary>
         /// <param name="input">String User input.</param>
-        public Scanner(String input)
+        public Scanner(string input)
         {
 
             userInput = input.Split();
@@ -215,7 +215,7 @@ namespace Calculator
         /// checking for the presence of the next token with the hasNext method.
         /// </summary>
         /// <returns>String The token of the user input.</returns>
-        public String next()
+        public string next()
         {
             if (hasNextFlag)
             {
