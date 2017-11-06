@@ -10,12 +10,24 @@ namespace Homework4.Controllers
     public class GravityCalculationController : Controller
     {
         // GET: GravityCalculation
+        /// <summary>
+        /// Method to process GET requests to the GravityCalculation View.
+        /// </summary>
+        /// <returns>ActionResult View of GravityCalculation</returns>
         public ActionResult GravityCalculation()
         {
             return View();
             
         }
 
+        /// <summary>
+        /// Specific action for sending information from the View via the
+        /// Request.Form method. This will get information from the form and
+        /// calculate the final gravity of a homebrew.
+        /// </summary>
+        /// <returns>ActionResult The View with information on the users final
+        /// gravity based on their form input information
+        /// </returns>
         public ActionResult GravityFormInformation()
         {
             string originalGravity = Request.Form["original-gravity"];

@@ -10,11 +10,26 @@ namespace Homework4.Controllers
     public class LoanCalculatorController : Controller
     {
         // GET: LoanCalculator
+        /// <summary>
+        /// Method to Process GET request for the LoanCalculator View.
+        /// </summary>
+        /// <returns>ActionResult View for the LoanCalculator</returns>
         public ActionResult LoanCalculator()
         {
             return View();
         }
 
+        /// <summary>
+        /// Method specific to HttpPost requests to the server for the LoanCalculator View.
+        /// This will take in a query string of the loan form information the user has filled out.
+        /// It will also perform some error detection and handling.
+        /// </summary>
+        /// <param name="loanAmount">String User form input of amount for their loan.</param>
+        /// <param name="interestRate">String User form input for the intrest rate of the loan.</param>
+        /// <param name="termLength">int? Integer for the length of the loan.</param>
+        /// <returns>ActionResult View containing the processed information of the calculated loan.
+        /// (This will be a RedirectToAction which will then take the user to the View)
+        /// </returns>
         [HttpPost]
         public ActionResult LoanCalculator(string loanAmount, string interestRate, int? termLength)
         {
@@ -63,6 +78,11 @@ namespace Homework4.Controllers
             return RedirectToAction("ResultPage");
         }
 
+        /// <summary>
+        /// Method to GET the ResultPage View. This will pass in the processed information 
+        /// of the users loan and the calculation.
+        /// </summary>
+        /// <returns>ActionResult The View with all processed user information on their loan.</returns>
         public ActionResult ResultPage()
         {
             //Pass the TempData that was stored in calculatorLogic function to the viewBag for use.
@@ -73,6 +93,14 @@ namespace Homework4.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Arithmetic method for calculating the amount of your payments on a loan based on
+        /// the loan amount, interest rate and term length.
+        /// </summary>
+        /// <param name="loanAmount">double Loan amount.</param>
+        /// <param name="interestRate">double Interest rate.</param>
+        /// <param name="termLength">double Length of the loan.</param>
+        /// <returns>double Calculated payment amount.</returns>
         public double calculatorLogic(double loanAmount, double interestRate, double termLength)
         {
             interestRate = interestRate * .01;

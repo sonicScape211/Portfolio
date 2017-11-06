@@ -5,6 +5,9 @@
 
 <h2>Loan Payment Result</h2>
 
+<!--This three razor code variables are original from the user form input and are passed from the controller for 
+    easy varification that the information was passed correctly.-->
 <h4>This will be your payment amount for a term length of: @ViewBag.termLength months at @ViewBag.interestRate% for the amount
     of $@ViewBag.loanAmount:</h4>
+<!--Actual calculation result passed from the controller.-->
 <h4>$@ViewBag.loanPaymentResult</h4>

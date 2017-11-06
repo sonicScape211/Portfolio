@@ -1,5 +1,5 @@
 ﻿
-@{
+@{/*Passed Title for the page from the Controller.*/
     ViewBag.Title = "LoanCalculator";
 }
 
@@ -25,7 +25,7 @@
                 <input class="form-control" type="text" name="loanAmount" placeholder="Loan Amount (Ex. 12000.00)" />
             </div>
 
-            <div>
+            <div><!--Error specified and caught in the controller.-->
                 <p>@ViewBag.loanAmountError</p>
             </div>
 
@@ -36,7 +36,7 @@
                 <input class="form-control" type="text" name="interestRate" placeholder="Interest Rate (Ex. 5.00)" required/>
             </div>
 
-            <div>
+            <div><!--Error specified and caught in the controller.-->
                 <p>@ViewBag.interestRateError</p>
             </div>
 
@@ -47,7 +47,7 @@
 
             </div>
 
-            <div>
+            <div><!--Error specified and caught in the controller.-->
                 <p>@ViewBag.termLengthError</p>
             </div>
 

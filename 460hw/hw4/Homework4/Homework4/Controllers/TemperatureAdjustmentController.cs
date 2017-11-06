@@ -9,12 +9,22 @@ namespace Homework4.Controllers
 {
     public class TemperatureAdjustmentController : Controller
     {
+        /// <summary>
+        /// Get the Temperature Adjustment view page.
+        /// </summary>
+        /// <returns></returns>
         // GET: TemperatureAdjustment
         public ActionResult TemperatureAdjustment()
         {
             return View();
         }
 
+        /// <summary>
+        /// On any POST request the controller will grab and process information
+        /// from the form on the TemperatureAdjustment view.
+        /// </summary>
+        /// <param name="form">Form TempAdjustment form.</param>
+        /// <returns>The View with calculated Temp Adjustments.</returns>
         [HttpPost]
         public ActionResult TemperatureAdjustment(FormCollection form)
         {
@@ -29,10 +39,13 @@ namespace Homework4.Controllers
             return View();
         }
 
-        /*
-         * Calculates the correct gravity for the user given temperature.
-         * @return double The correct gravity.
-         */
+        /// <summary>
+        /// Method for calculating the correct gravity of a homebrew for 
+        /// the user given temperature and their current gravity..
+        /// </summary>
+        /// <param name="gravity">double The users current gravity.</param>
+        /// <param name="temp">double The temperature of the brew.</param>
+        /// <returns>Double The correct gravity</returns>
         public double temperatureCalculation(double gravity, double temp)
         {
             if (temp >= 51.0 && temp <= 69.9)

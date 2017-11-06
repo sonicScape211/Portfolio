@@ -1,10 +1,12 @@
 ﻿
-@{
+@{<!--Title passed from the controller.-->
     ViewBag.Title = "GravityFormInformation";
 }
 
 <h2>Information From Your Gravity Form!</h2>
-
+<!--originalGravity and specifiedGravity have not been changed from the original user input in the form.
+    The ViewData["abv"] is the calculated infromation derived from the orginalGravity and specificGravity
+    variables.-->
 <p> @ViewBag.originalGravity is the Original Gravity and @ViewBag.specificGravity is the Specific Gravity.</p>
 <p>Your Approximate Alcohol by Volume (ABV) is: @ViewData["abv"]</p>
 
