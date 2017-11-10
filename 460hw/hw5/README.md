@@ -131,40 +131,20 @@ Also note the use of the `new {htmlAttributes = new {@class.....}}` This is a re
 
 ### How does the Controller fit in?
 
-So the way that the controller operates all of this code is that it will first create a DAL db instance. This DAL will be created from the db that we set up and then the DAL will create the `DbSet<yourModelClass>` to create a table in which all your data is stored. After this the controller uses the DbSet to create a list and then returns that list to the `View()` to display our list of elements.  
+So the way that the controller operates all of this code is that it will first create a DAL db instance. This DAL will be created from the db that we set up and then the DAL will create the `DbSet<yourModelClass>` to create a table in which all your data is stored. After this the controller uses the DbSet to create a list and then returns that list to the `View()` to display our list of elements.
+
+## Screen Shots
+### Initial Table
+![](WebsiteScreenShots/InitialTable.PNG)
+
+### Before Form Submition
+![](WebsiteScreenShots/BeforeSubmit.PNG)
+
+### After Form Submition
+![](WebsiteScreenShots/AfterSubmit.PNG)
 
 
 [Back to the Homepage](../../)
 
 [Previous](../hw4)
 Next
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

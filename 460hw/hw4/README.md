@@ -116,6 +116,16 @@ We can also get form information in another way and that is through query string
 ```
 Here we use the `(FormCollection form)` to get specific elements from the URL query string. The form will begin at index 0 and go from there. The disadvantage to this is that if a form element is added to the View then we will need to change our code in the controller as well to make sure we are still retrieving accurate information.
 
+## Screen Shots of Working Site
+### ABV Calculation
+![](WebpageScreenShots/ABVCalcResult.PNG)
+
+### Temperature Calculation
+![](WebpageScreenShots/TempCalcResult.PNG)
+
+### Loan Calculation
+![](WebpageScreenShots/LoanCalcResult.PNG)
+
 [Back to the Homepage](../../)
 
 [Previous](../hw3)
