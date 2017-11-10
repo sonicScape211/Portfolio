@@ -8,7 +8,7 @@
 [Previous](../hw4)
 Next
 
-### Overveiw
+### Overview
 In this section of the blog we are going to talk about the ASP .NET MVC Code First database that we have created! Man....I am not going to lie, I ran into quite a few issues with this. There will be a few key things I am going to talk about here: how we create the database, how the Controller talks to both the View and the Model to display and log results and how names really matter!
 
 Alright, let's dive in.

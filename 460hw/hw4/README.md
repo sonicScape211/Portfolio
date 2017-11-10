@@ -8,7 +8,7 @@
 [Previous](../hw3)
 [Next](../hw5)
 
-### Overveiw
+### Overview
 
 For this project we will be diving into learning ASP .Net MVC (Model, View, Controller) to build our websites with better seperation of the working parts and with easy access to databases! Sound exciting. Let's get started. I will be building a website which has 3 different pages, all of which will be able to take user input and return something. Page one contains a calculator for calculating a homebrewers potential alcohol by volume of their brew using the original gravity readings and the specific gravity readings. The second page will be a temperature adjuster for a specific gravity of a homebrew and then the third will be a simple loan calculator.
 
