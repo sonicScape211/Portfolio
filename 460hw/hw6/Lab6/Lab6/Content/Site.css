@@ -1,12 +1,14 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding:0px;
+    margin: unset;
+    max-width: none;
+    width: 100%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,3 +24,51 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Set styles for the top navbar.*/
+.navbar-top {
+    background-color: #373637;
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+/*Set the top nav bars background color for the search button.*/
+.navbar-top > .form-inline > .btn {
+    background-color: #D1D2D4;
+    color: black;
+}
+
+
+/*Set the color for the top-right logo*/
+#brand-top {
+    color: #D1D2D4;
+    font-style:oblique;
+    font-size: x-large;
+}
+
+#search-bar {
+  
+    float: right;
+}
+
+/*Control for bottom navbar styles*/
+#navbar-bottom {
+    background-color: rgb(209, 210, 212);
+    border-radius: 0px;
+    margin: 0px;
+}
+
+#button-container {
+    margin-bottom: 5px;
+}
+
+.nav-button {
+    font-size: 18px;
+    background-color: #EBEBEB;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#navbar-list {
+    float: right;
+}
+
