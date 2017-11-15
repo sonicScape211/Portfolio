@@ -19,6 +19,8 @@
     background-color: rgba(255, 255, 255, 0.35);
     padding-top: 10px;
     padding-bottom: 20px;
+    margin: 0px;
+    border-radius: 0px;
 }
 
 
@@ -29,6 +31,17 @@
 #banner-list-nav > .nav-item {
     margin-left: 25px;
     margin-right: 25px;
+
+}
+
+.banner-dropdown {
+
+    display: none;
+    background-color: rgba(255, 255, 255, 0.35);
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 175px;
+    
 }
 
 .nav-link {

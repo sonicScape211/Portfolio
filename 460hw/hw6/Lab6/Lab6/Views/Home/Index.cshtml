@@ -13,21 +13,41 @@
                 <div id="homebanner-nav-list-container">
                     <br />
                     <ul id="banner-list-nav" class="nav justify-content-center">
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Mens</a>
+                            <a id="mens-drop-link" class="nav-link banner-nav-link" href="#">Men's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Women's</a>
+                            <a id="womens-drop-link" class="nav-link banner-nav-link" href="#">Women's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Childern</a>
+                            <a class="nav-link banner-nav-link" href="#">Childern</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Equipment</a>
+                            <a class="nav-link banner-nav-link" href="#">Products</a>
                         </li>
                     </ul>
                     
                 </div>
+            </div>
+           
+        </div>
+
+        <div id="banner-drop-downs">
+            <div id="mens-drop-down" class="banner-dropdown">
+                <p>Mens DropDown</p>
+            </div>
+
+            <div id="womens-drop-down" class="banner-dropdown">
+                <p>Womens DropDown</p>
+            </div>
+
+            <div class="banner-dropdown">
+                <p>Childrens DropDown</p>
+            </div>
+            
+            <div class="banner-dropdown">
+                <p>Products DropDown</p>
             </div>
         </div>
     </div>
@@ -58,3 +78,7 @@
 <div id="test">
     <p>test</p>
 </div>
+
+@section scripts{
+    <script src="~/Scripts/LandingPage.js" ;></script>    
+}
