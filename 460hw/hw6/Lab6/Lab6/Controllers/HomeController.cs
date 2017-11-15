@@ -13,7 +13,8 @@ namespace Lab6.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            //Pass in the product categories as a list when the page is created.
+            return View(db.ProductCategories.ToList());
         }
 
         public ActionResult ProductDropDown()

@@ -1,4 +1,7 @@
-﻿@{
+﻿<!--The model that our View is expecting-->
+@model IEnumerable<Lab6.Models.ProductCategory>
+
+@{
     ViewBag.Title = "Home Page";
 }
 <link rel="stylesheet" href="~/Content/LandingPage.css" />
@@ -36,6 +39,7 @@
         <div id="banner-drop-downs">
             <div id="mens-drop-down" class="banner-dropdown">
                 <p>Mens DropDown</p>
+               
             </div>
 
             <div id="womens-drop-down" class="banner-dropdown">
@@ -46,8 +50,36 @@
                 <p>Childrens DropDown</p>
             </div>
             
-            <div class="banner-dropdown">
-                <p>Products DropDown</p>
+            <div id="products-dropdown" class="banner-dropdown">
+                
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        
+                        <li>
+                            <a class="product-categories-link" href="#">@Html.DisplayFor(modelItem => item.Name)</a>
+                        </li>
+                    };
+                </ul>
+                <div id="product-categories-container" display="block">
+
+                    <div class="banner-dropdown">
+                        <p>Class 1</p>
+                    </div>
+
+                    <div class="banner-dropdown">
+                        <p>Class 2</p>
+                    </div>
+
+                    <div class="banner-dropdown">
+                        <p>Class 3</p>
+                    </div>
+
+                    <div class="banner-dropdown">
+                        <p>Class 4</p>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
