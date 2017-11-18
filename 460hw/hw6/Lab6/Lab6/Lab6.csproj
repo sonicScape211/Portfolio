@@ -181,6 +181,7 @@
     <Compile Include="Models\TransactionHistory.cs" />
     <Compile Include="Models\TransactionHistoryArchive.cs" />
     <Compile Include="Models\UnitMeasure.cs" />
+    <Compile Include="Models\ViewModels\ProductCategoriesViewModel.cs" />
     <Compile Include="Models\WorkOrder.cs" />
     <Compile Include="Models\WorkOrderRouting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,6 +218,8 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

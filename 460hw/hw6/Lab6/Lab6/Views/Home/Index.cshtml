@@ -1,5 +1,6 @@
 ﻿<!--The model that our View is expecting-->
-@model IEnumerable<Lab6.Models.ProductCategory>
+@*@model IEnumerable<Lab6.Models.ProductCategory>*@
+@model Lab6.Models.ViewModels.ProductCategoriesViewModel
 
 @{
     ViewBag.Title = "Home Page";
@@ -51,35 +52,62 @@
             </div>
             
             <div id="products-dropdown" class="banner-dropdown">
+                @*@using (Ajax.BeginForm("Index", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "products-dropdown" }))*@
                 
+                   
                 <ul>
-                    @foreach (var item in Model)
+
+                    @foreach (var item in Model.ProductCategory)
                     {
-                        
                         <li>
-                            <a class="product-categories-link" href="#">@Html.DisplayFor(modelItem => item.Name)</a>
+
+                            <button value="@Html.DisplayFor(modelItem => item.Name)" class="product-categories-link">
+                                @Html.DisplayFor(modelItem => item.Name)
+                                        @*<a class="product-categories-link">@Html.DisplayFor(modelItem => item.Name)</a>*@
+                            </button>
+
                         </li>
                     };
+
                 </ul>
+                    
+                
                 <div id="product-categories-container" display="block">
 
                     <div class="banner-dropdown">
+                        @foreach (var item in Model.BikesSubcategory)
+                        {
+                            <button class="subCategoryButton">@Html.DisplayFor(model => item.Name)</button>
+                        }
                         <p>Class 1</p>
                     </div>
 
                     <div class="banner-dropdown">
+                        @foreach (var item in Model.ComponentsSubcategory)
+                        {
+                            <button class="subCategoryButton">@Html.DisplayFor(model => item.Name)</button>
+                        }
                         <p>Class 2</p>
                     </div>
 
                     <div class="banner-dropdown">
+                        @foreach (var item in Model.ClothingSubcategory)
+                        {
+                            <button class="subCategoryButton">@Html.DisplayFor(model => item.Name)</button>
+                        }
                         <p>Class 3</p>
                     </div>
 
                     <div class="banner-dropdown">
+                        @foreach (var item in Model.AccessoriesSubcategory)
+                        {
+                            <button class="subCategoryButton">@Html.DisplayFor(model => item.Name)</button>
+                        }
                         <p>Class 4</p>
                     </div>
 
                 </div>
+                
             </div>
         </div>
     </div>

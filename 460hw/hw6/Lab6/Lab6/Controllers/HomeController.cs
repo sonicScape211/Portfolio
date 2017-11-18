@@ -1,5 +1,7 @@
 ﻿using Lab6.Models;
+using Lab6.Models.ViewModels;
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,16 +15,38 @@ namespace Lab6.Controllers
 
         public ActionResult Index()
         {
+            //Create the new viewModel containing both the Cat and SubCat tables.
+            ProductCategoriesViewModel viewModel = new ProductCategoriesViewModel();
+            //set the fields in the viewModel class to reflect that of the db tables.
+           
+            
             //Pass in the product categories as a list when the page is created.
-            return View(db.ProductCategories.ToList());
+            return View(createViewModel(viewModel));
+            //return View(db.ProductCategories.ToList());
         }
 
-        public ActionResult ProductDropDown()
+        [HttpPost]
+        public ActionResult Index(string subCategoryButton)
         {
-            var productCategoriesList = db.ProductCategories.ToList();
-            SelectList list = new SelectList(productCategoriesList, "ID", "Name");
-            ViewBag.productList = list;
-            return View();
+            ProductCategoriesViewModel viewModel = new ProductCategoriesViewModel();
+
+            Debug.Print(subCategoryButton);
+            //This will need to be specific to the passed value, not toList of all. TODO.
+            return View(createViewModel(viewModel));//db.ProductSubcategories.ToList());
+        }
+
+        public ProductCategoriesViewModel createViewModel(ProductCategoriesViewModel viewModel)
+        {
+
+            viewModel.ProductCategory = db.ProductCategories.ToList();
+            viewModel.ProductSubcategory = db.ProductSubcategories.ToList();
+            viewModel.BikesSubcategory = db.ProductSubcategories.Where(c => c.ProductCategory.Name == "Bikes").ToList();
+            viewModel.ComponentsSubcategory = db.ProductSubcategories.Where(c => c.ProductCategory.Name == "Components").ToList();
+            viewModel.ClothingSubcategory = db.ProductSubcategories.Where(c => c.ProductCategory.Name == "Clothing").ToList();
+            viewModel.AccessoriesSubcategory = db.ProductSubcategories.Where(c => c.ProductCategory.Name == "Accessories").ToList();
+
+
+            return viewModel;
         }
 
         public ActionResult About()
