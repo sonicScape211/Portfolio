@@ -52,9 +52,7 @@
             </div>
             
             <div id="products-dropdown" class="banner-dropdown">
-                @*@using (Ajax.BeginForm("Index", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "products-dropdown" }))*@
-                
-                   
+      
                 <ul>
 
                     @foreach (var item in Model.ProductCategory)
@@ -63,7 +61,7 @@
 
                             <button value="@Html.DisplayFor(modelItem => item.Name)" class="product-categories-link">
                                 @Html.DisplayFor(modelItem => item.Name)
-                                        @*<a class="product-categories-link">@Html.DisplayFor(modelItem => item.Name)</a>*@
+                                        
                             </button>
 
                         </li>

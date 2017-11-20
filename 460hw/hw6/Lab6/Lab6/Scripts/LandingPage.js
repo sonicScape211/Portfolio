@@ -25,15 +25,25 @@
 
         $.ajax({
             type: 'POST',
-            url: "/Home/Index",
+            url: "/Home/ProductsList",
             data: { subCategoryButton: buttonName },
             dataType: "html",
+            success: function (response) {
+                
+                /*Ok so ajax does not show a call to the view if that is the result of 
+                your specified POST action. It will come back to the callback function
+                on success or failer. This is the way around this. Have the POST action
+                return the view with the model included, then on success switch the url
+                and window location, THEN populate the div with the response (which is the
+                view html information that INCULDES the view! There. Remember that.*/
+                window.location.href = "/Home/ProductsList";
+                $('#container').html(response);
+            }
         }).fail(function (jqXHR, textStatus, errorThrown) {
            console.log(jqXHR);
            console.log(textStatus);
            console.log(errorThrown);
         });
-
     });
 
     function swapDivVisibility(button, divContainer)

@@ -12,7 +12,7 @@ namespace Lab6.Controllers
     public class HomeController : Controller
     {
         private AdventureWorksContext db = new AdventureWorksContext();
-
+        ProductViewModel productView = new ProductViewModel();
         public ActionResult Index()
         {
             //Create the new viewModel containing both the Cat and SubCat tables.
@@ -21,23 +21,38 @@ namespace Lab6.Controllers
            
             
             //Pass in the product categories as a list when the page is created.
-            return View(createViewModel(viewModel));
+            return View(CreateViewModel(viewModel));
             //return View(db.ProductCategories.ToList());
         }
 
         [HttpPost]
-        public ActionResult Index(string subCategoryButton)
+        public ActionResult ProductsList(string subCategoryButton)
         {
-            ProductCategoriesViewModel viewModel = new ProductCategoriesViewModel();
+            //ProductViewModel productView = new ProductViewModel();
+            productView.Product = db.Products.ToList();
+            //Extract the ID from the button name.
+            var id = (from ProductSubcategory in db.ProductSubcategories
+                      where ProductSubcategory.Name == subCategoryButton
+                      select ProductSubcategory.ProductSubcategoryID
+                      ).FirstOrDefault(); //This FirstOrDefault will allow the var to be cast as an int
+                                          //rather than an IQueriable.
 
-            Debug.Print(subCategoryButton);
-            //This will need to be specific to the passed value, not toList of all. TODO.
-            return View(createViewModel(viewModel));//db.ProductSubcategories.ToList());
+            productView.ProductQuery = db.Products.Where(p => p.ProductSubcategoryID == id).ToList();
+            //Store the data away to be called later.
+
+            TempData["query"] = productView;
+            return View(productView);//db.ProductSubcategories.ToList())
         }
 
-        public ProductCategoriesViewModel createViewModel(ProductCategoriesViewModel viewModel)
+        public ActionResult ProductsList()//ProductViewModel productView)
         {
+            ProductViewModel productView = (ProductViewModel) TempData["query"];
+            return View(productView);
+        }
 
+        public ProductCategoriesViewModel CreateViewModel(ProductCategoriesViewModel viewModel)
+        {
+            
             viewModel.ProductCategory = db.ProductCategories.ToList();
             viewModel.ProductSubcategory = db.ProductSubcategories.ToList();
             viewModel.BikesSubcategory = db.ProductSubcategories.Where(c => c.ProductCategory.Name == "Bikes").ToList();
@@ -48,6 +63,7 @@ namespace Lab6.Controllers
 
             return viewModel;
         }
+
 
         public ActionResult About()
         {

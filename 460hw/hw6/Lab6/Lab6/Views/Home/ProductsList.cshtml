@@ -1,0 +1,37 @@
+﻿@model Lab6.Models.ViewModels.ProductViewModel
+@{
+    ViewBag.Title = "ProductsList";
+}
+
+<h2>ProductsList</h2>
+
+<div id="container">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Product Number</th>
+                <th scope="col">Color</th>
+                <th scope="col">Price</th>
+                <th scope="col">Size</th>
+                <th scope="col">Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ProductQuery) {
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@Html.DisplayFor(model => item.Name)</td>
+                    <td>@Html.DisplayFor(model => item.ProductNumber)</td>
+                    <td>@Html.DisplayFor(model => item.Color)</td>
+                    <td>@Html.DisplayFor(model => item.ListPrice)</td>
+                    <td>@Html.DisplayFor(model => item.Size)</td>
+                    <td>@Html.DisplayFor(model => item.Weight)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
