@@ -1,0 +1,15 @@
+﻿@model Lab6.Models.ViewModels.ProductViewModel
+
+@{
+    ViewBag.Title = "ProductDetailsPage";
+}
+
+<h2>ProductDetailsPage</h2>
+
+<p>
+    
+    @foreach (var item in Model.ProductDescription) {
+        <p>@Html.DisplayFor(model => item.Description)</p>
+    }
+
+</p>

@@ -10,6 +10,6 @@ namespace Lab6.Models.ViewModels
         public IEnumerable<Product> Product { get; set; }
         public IEnumerable<ProductSubcategory> ProductSubcategory { get; set; }
         public IEnumerable<Product> ProductQuery { get; set; }
-
+        public IEnumerable<ProductDescription> ProductDescription { get; set; }
     }
 }

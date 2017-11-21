@@ -25,34 +25,9 @@ namespace Lab6.Controllers
             //return View(db.ProductCategories.ToList());
         }
 
-        [HttpPost]
-        public ActionResult ProductsList(string subCategoryButton)
-        {
-            //ProductViewModel productView = new ProductViewModel();
-            productView.Product = db.Products.ToList();
-            //Extract the ID from the button name.
-            var id = (from ProductSubcategory in db.ProductSubcategories
-                      where ProductSubcategory.Name == subCategoryButton
-                      select ProductSubcategory.ProductSubcategoryID
-                      ).FirstOrDefault(); //This FirstOrDefault will allow the var to be cast as an int
-                                          //rather than an IQueriable.
-
-            productView.ProductQuery = db.Products.Where(p => p.ProductSubcategoryID == id).ToList();
-            //Store the data away to be called later.
-
-            TempData["query"] = productView;
-            return View(productView);//db.ProductSubcategories.ToList())
-        }
-
-        public ActionResult ProductsList()//ProductViewModel productView)
-        {
-            ProductViewModel productView = (ProductViewModel) TempData["query"];
-            return View(productView);
-        }
-
         public ProductCategoriesViewModel CreateViewModel(ProductCategoriesViewModel viewModel)
         {
-            
+
             viewModel.ProductCategory = db.ProductCategories.ToList();
             viewModel.ProductSubcategory = db.ProductSubcategories.ToList();
             viewModel.BikesSubcategory = db.ProductSubcategories.Where(c => c.ProductCategory.Name == "Bikes").ToList();
@@ -62,6 +37,42 @@ namespace Lab6.Controllers
 
 
             return viewModel;
+        }
+
+        [HttpPost]
+        public ActionResult ProductsList(string subCategoryButton)
+        {
+
+            productView.ProductQuery = db.Products
+                                       .Where(p => p.ProductSubcategoryID == db.ProductSubcategories
+                                       .Where(psub => psub.Name == subCategoryButton)
+                                       .Select(psub => psub.ProductCategoryID)
+                                       .FirstOrDefault())
+                                       .ToList();
+
+            //Store the data away to be called later.
+            TempData["query"] = productView;
+
+            return View(productView);
+        }
+
+        public ActionResult ProductsList()//ProductViewModel productView)
+        {
+            ProductViewModel productView = (ProductViewModel)TempData["query"];
+            return View(productView);
+        }
+
+        public ActionResult productDetailsPage(int productID)
+        {
+
+            productView.ProductDescription = db.ProductDescriptions
+                                            .Where(pd => pd.ProductDescriptionID == (db.ProductModelProductDescriptionCultures
+                                            .Where(pc => pc.ProductModelID == (db.Products.Where(p => p.ProductID == productID)
+                                            .Select(p => p.ProductModelID)).FirstOrDefault())
+                                            .Where(pc => pc.CultureID == "en")
+                                            .Select(pc => pc.ProductDescriptionID)).FirstOrDefault());
+                                            
+            return View(productView);
         }
 
 

@@ -1,4 +1,6 @@
-﻿@model Lab6.Models.ViewModels.ProductViewModel
+﻿@using System.Web.Mvc.Html
+
+@model Lab6.Models.ViewModels.ProductViewModel
 @{
     ViewBag.Title = "ProductsList";
 }
@@ -23,12 +25,13 @@
             @foreach (var item in Model.ProductQuery) {
                 <tr>
                     <th scope="row">1</th>
-                    <td>@Html.DisplayFor(model => item.Name)</td>
+                    <td>@Html.ActionLink(item.Name, "productDetailsPage", "Home", new { productID = item.ProductID }, null)</td>
                     <td>@Html.DisplayFor(model => item.ProductNumber)</td>
                     <td>@Html.DisplayFor(model => item.Color)</td>
                     <td>@Html.DisplayFor(model => item.ListPrice)</td>
                     <td>@Html.DisplayFor(model => item.Size)</td>
                     <td>@Html.DisplayFor(model => item.Weight)</td>
+                    <td>@Html.DisplayFor(model => item.ProductID)</td>
                 </tr>
             }
         </tbody>
