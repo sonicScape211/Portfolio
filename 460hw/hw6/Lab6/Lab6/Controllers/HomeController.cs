@@ -13,6 +13,8 @@ namespace Lab6.Controllers
     {
         private AdventureWorksContext db = new AdventureWorksContext();
         ProductViewModel productView = new ProductViewModel();
+        ProductDetailsViewModel detailsViewModel = new ProductDetailsViewModel();
+
         public ActionResult Index()
         {
             //Create the new viewModel containing both the Cat and SubCat tables.
@@ -42,11 +44,12 @@ namespace Lab6.Controllers
         [HttpPost]
         public ActionResult ProductsList(string subCategoryButton)
         {
+            productView.Product = db.Products.ToList();
 
             productView.ProductQuery = db.Products
                                        .Where(p => p.ProductSubcategoryID == db.ProductSubcategories
                                        .Where(psub => psub.Name == subCategoryButton)
-                                       .Select(psub => psub.ProductCategoryID)
+                                       .Select(psub => psub.ProductSubcategoryID)
                                        .FirstOrDefault())
                                        .ToList();
 
@@ -64,15 +67,60 @@ namespace Lab6.Controllers
 
         public ActionResult productDetailsPage(int productID)
         {
+            ProductDetailsViewModel detailsViewModel = PopulateDetailsViewModel(productID);
+                                            
+            return View(detailsViewModel);
+        }
 
-            productView.ProductDescription = db.ProductDescriptions
+        public ProductDetailsViewModel PopulateDetailsViewModel(int productID)
+        {
+
+            detailsViewModel.Products = db.Products
+                                        .Where(p => p.ProductID == productID);
+
+            detailsViewModel.ProductCategory = db.ProductCategories
+                                               .Where(pc => pc.ProductCategoryID == db.ProductSubcategories
+                                               .Where(psub => psub.ProductSubcategoryID == db.Products
+                                               .Where(p => p.ProductID == productID)
+                                               .Select(p => p.ProductSubcategoryID)
+                                               .FirstOrDefault())
+                                               .Select(psub => psub.ProductCategoryID)
+                                               .FirstOrDefault());
+
+            detailsViewModel.ProductSubcategory = db.ProductSubcategories
+                                                  .Where(psub => psub.ProductSubcategoryID == db.Products
+                                                  .Where(p => p.ProductID == productID)
+                                                  .Select(p => p.ProductSubcategoryID)
+                                                  .FirstOrDefault());
+
+            detailsViewModel.ProductReview = db.ProductReviews
+                                             .Where(pr => pr.ProductID == productID);
+
+            detailsViewModel.ProductPhoto = db.ProductPhotoes
+                                            .Where(pp => pp.ProductPhotoID == db.ProductProductPhotoes
+                                            .Where(prodpp => prodpp.ProductID == productID)
+                                            .Select(prodpp => prodpp.ProductPhotoID)
+                                            .FirstOrDefault());
+
+            detailsViewModel.ProductDescription = db.ProductDescriptions
                                             .Where(pd => pd.ProductDescriptionID == (db.ProductModelProductDescriptionCultures
                                             .Where(pc => pc.ProductModelID == (db.Products.Where(p => p.ProductID == productID)
                                             .Select(p => p.ProductModelID)).FirstOrDefault())
                                             .Where(pc => pc.CultureID == "en")
                                             .Select(pc => pc.ProductDescriptionID)).FirstOrDefault());
-                                            
-            return View(productView);
+
+            return (detailsViewModel);
+        }
+
+        public ActionResult Show(int id)
+        {
+            var imageData = db.ProductPhotoes
+                            .Where(pp => pp.ProductPhotoID == id)
+                            .Select(pp => pp.LargePhoto).FirstOrDefault();
+
+            byte[] result = imageData.ToArray();
+
+            return File(result, "image/jpg");
         }
 
 

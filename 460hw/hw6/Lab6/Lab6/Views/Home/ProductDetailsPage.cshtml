@@ -1,4 +1,4 @@
-﻿@model Lab6.Models.ViewModels.ProductViewModel
+﻿@model Lab6.Models.ViewModels.ProductDetailsViewModel
 
 @{
     ViewBag.Title = "ProductDetailsPage";
@@ -6,10 +6,35 @@
 
 <h2>ProductDetailsPage</h2>
 
-<p>
-    
-    @foreach (var item in Model.ProductDescription) {
+<div>
+
+    @foreach (var item in Model.Products)
+    {
+        <p>@Html.DisplayFor(model => item.Name)</p>
+    }
+
+    @foreach (var item in Model.ProductDescription)
+    {
         <p>@Html.DisplayFor(model => item.Description)</p>
     }
 
-</p>
+    @foreach (var item in Model.ProductCategory)
+    {
+        <p>@Html.DisplayFor(model => item.Name)</p>
+    }
+
+    @foreach (var item in Model.ProductSubcategory)
+    {
+        <p>@Html.DisplayFor(model => item.Name)</p>
+    }
+
+    @{int photoID = 0;}
+
+    @foreach (var item in Model.ProductPhoto)
+    {
+        photoID = item.ProductPhotoID;
+    }
+
+    <img src="@Url.Action("Show", "Home", new { id = photoID })" />
+
+</div>
