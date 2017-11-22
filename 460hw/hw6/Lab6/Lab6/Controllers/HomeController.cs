@@ -15,6 +15,8 @@ namespace Lab6.Controllers
         ProductViewModel productView = new ProductViewModel();
         ProductDetailsViewModel detailsViewModel = new ProductDetailsViewModel();
 
+        private int currentProductID;
+
         public ActionResult Index()
         {
             //Create the new viewModel containing both the Cat and SubCat tables.
@@ -65,9 +67,9 @@ namespace Lab6.Controllers
             return View(productView);
         }
 
-        public ActionResult productDetailsPage(int productID)
+        public ActionResult ProductDetailsPage(int productID)
         {
-            ProductDetailsViewModel detailsViewModel = PopulateDetailsViewModel(productID);
+            detailsViewModel = PopulateDetailsViewModel(productID);
                                             
             return View(detailsViewModel);
         }
@@ -123,18 +125,39 @@ namespace Lab6.Controllers
             return File(result, "image/jpg");
         }
 
-
-        public ActionResult About()
+        public ActionResult ReviewForm(int id)
         {
-            ViewBag.Message = "Your application description page.";
+            ViewData["ProductID"] = id;
+            currentProductID = id;
+            Debug.WriteLine(currentProductID);
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult SubmitReview(string id, [Bind(Include = "ProductReviewID,ProductID,ReviewerName,ReviewDate,EmailAddress,Rating,Comments,ModifiedDate")] ProductReview productReview)
         {
-            ViewBag.Message = "Your contact page.";
+            //Get the id of the query string
+            
+            Debug.WriteLine(id);
+            int productId = Convert.ToInt32(id);
+            currentProductID = productId;
 
+            if (ModelState.IsValid) {
+                productReview.ProductID = productId;
+                productReview.ReviewDate = DateTime.Now;
+                productReview.ModifiedDate = DateTime.Now;
+
+                db.ProductReviews.Add(productReview);
+                db.SaveChanges();
+
+                return RedirectToAction("ReviewAccepted");
+            }
+
+            return View();
+        }
+
+        public ActionResult ReviewAccepted()
+        {
             return View();
         }
     }
