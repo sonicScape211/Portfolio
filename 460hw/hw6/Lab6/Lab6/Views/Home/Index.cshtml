@@ -53,13 +53,14 @@
             
             <div id="products-dropdown" class="banner-dropdown">
       
-                <ul>
+                <ul class="col-md-6">
 
                     @foreach (var item in Model.ProductCategory)
                     {
-                        <li>
+                        <li class="nav-item">
 
-                            <button value="@Html.DisplayFor(modelItem => item.Name)" class="product-categories-link">
+                            <button value="@Html.DisplayFor(modelItem => item.Name)" class="product-categories-link" style="margin-bottom: 10px;">
+                               
                                 @Html.DisplayFor(modelItem => item.Name)
                                         
                             </button>
@@ -68,56 +69,56 @@
                     };
 
                 </ul>
-                    
-                
-                <div id="product-categories-container" display="block">
+            
+                 
+            
+                <div class="col-md-6" id="product-categories-container" display="block">
 
-                    <div class="banner-dropdown">
+                    <div class="banner-dropdown background-none">
                         @foreach (var item in Model.BikesSubcategory)
                         {
                             <button class="subCategoryButton">@Html.DisplayFor(model => item.Name)</button>
                         }
-                        <p>Class 1</p>
+                        
                     </div>
 
-                    <div class="banner-dropdown">
+                    <div class="banner-dropdown background-none">
                         @foreach (var item in Model.ComponentsSubcategory)
                         {
                             <button class="subCategoryButton">@Html.DisplayFor(model => item.Name)</button>
                         }
-                        <p>Class 2</p>
+                        
                     </div>
 
-                    <div class="banner-dropdown">
+                    <div class="banner-dropdown background-none">
                         @foreach (var item in Model.ClothingSubcategory)
                         {
                             <button class="subCategoryButton">@Html.DisplayFor(model => item.Name)</button>
                         }
-                        <p>Class 3</p>
+                        
                     </div>
 
-                    <div class="banner-dropdown">
+                    <div class="banner-dropdown background-none">
                         @foreach (var item in Model.AccessoriesSubcategory)
                         {
                             <button class="subCategoryButton">@Html.DisplayFor(model => item.Name)</button>
                         }
-                        <p>Class 4</p>
+                        
                     </div>
 
                 </div>
-                
             </div>
+               
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Wow! Look at this!</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            This looks like a great spot to put one of your featured items... or maybe a sale promotion?? 
+            Its all up to you. 
         </p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
@@ -134,7 +135,7 @@
 </div>
 
 <div id="test">
-    <p>test</p>
+    <p> </p>
 </div>
 
 @section scripts{

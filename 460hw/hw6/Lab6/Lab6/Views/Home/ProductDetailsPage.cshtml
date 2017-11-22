@@ -22,8 +22,9 @@
     }
 
     <img src="@Url.Action("Show", "Home", new { id = photoID })" />
-
-    
+    <br />
+    <h2 style="text-decoration: underline">Description</h2>
+    <br />
     @foreach (var item in Model.ProductDescription)
     {
         <p>@Html.DisplayFor(model => item.Description)</p>
@@ -31,14 +32,16 @@
 
     @foreach (var item in Model.ProductReview)
     {
-        <h3>@Html.DisplayFor(model => item.Rating)</h3>
-        <h4>@Html.DisplayFor(model => item.ReviewerName)</h4>
+        <h3>Rating: @Html.DisplayFor(model => item.Rating) stars</h3>
+        <h4>Username: @Html.DisplayFor(model => item.ReviewerName)</h4>
         <br />
         <p>@Html.DisplayFor(model => item.ReviewDate)</p>
         <p>@Html.DisplayFor(model => item.Comments)</p>
     }
 
+    <br />
 
+    <h3>Would you like to leave this product a review? Please click below.</h3>
     @Html.ActionLink("Post A Review","ReviewForm","Home", new { id = productID }, null)
     
 

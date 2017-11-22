@@ -23,6 +23,10 @@
     border-radius: 0px;
 }
 
+ul {
+    list-style: none;
+}
+
 
 #homebanner-nav-list-container {
     width: 100%;
@@ -44,9 +48,14 @@
     
 }
 
+.background-none {
+    background-color: rgba(255, 255, 255, 0.00) !important;
+}
+
 .nav-link {
     border-radius: 10px;    
 }
+
 
 #test {
     height: 500px;
