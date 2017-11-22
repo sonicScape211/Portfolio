@@ -38,7 +38,6 @@
                                                                                        new SelectListItem {Text = "5", Value = "5" }},
                                                                                        htmlAttributes: new {@class = "custom-select mb-2 mr-sm-2 mb-sm-0" })
                 <br />
-                @*@Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "custom-select mb-2 mr-sm-2 mb-sm-0" } })*@
 
 
                 @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label"})
@@ -47,26 +46,6 @@
                 <br />
                 <button type="submit" class="btn btn-primary btn-sm">Post Review</button>
             </div>
-            @*
-    <input type="text" class="form-control" placeholder="First name">
-    <br />
-    <input type="text" class="form-control" placeholder="Last name">
-    <br />
-    <input type="email" class="form-control" placeholder="Email" />
-    <br />
-    <label class="mr-sm-2" for="inlineFormCustomSelect">Rating</label>
-    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-        <option selected></option>
-        <option value="1">One Star</option>
-        <option value="2">Two Star</option>
-        <option value="3">Three Star</option>
-        <option value="4">Four Star</option>
-        <option value="5">Five Star</option>
-    </select>
-    <br />
-    <label for="exampleFormControlTextarea1">Leave this product a review</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            *@
             
 
         </div>

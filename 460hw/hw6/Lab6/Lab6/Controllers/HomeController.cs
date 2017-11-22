@@ -138,7 +138,6 @@ namespace Lab6.Controllers
         {
             //Get the id of the query string
             
-            Debug.WriteLine(id);
             int productId = Convert.ToInt32(id);
             currentProductID = productId;
 
