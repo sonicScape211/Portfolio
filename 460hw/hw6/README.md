@@ -4,8 +4,9 @@
 [Homework Repo](https://github.com/sonicScape211/sonicScape211.github.io/tree/master/460hw/hw6)
 
 # Albums of Homework #6
-    * [Duke Ellington - The Hits](https://www.youtube.com/watch?v=k3LLKLdYJGA)
-    * [Jinsang - Solitude](https://www.youtube.com/watch?v=GSdYPkgCvtE&t=73s)
+[Duke Ellington - The Hits](https://www.youtube.com/watch?v=k3LLKLdYJGA)
+
+[Jinsang - Solitude](https://www.youtube.com/watch?v=GSdYPkgCvtE&t=73s)
 
 [Back to the Homepage](../../)
 
