@@ -1,0 +1,19 @@
+﻿body {
+}
+
+.margin {
+    width: 15%;
+}
+
+.page-container {
+    margin: 5px;
+}
+
+.search-bar-container {
+    padding: 25%;
+}
+
+.search-bar {
+    width: 250px;
+}
+

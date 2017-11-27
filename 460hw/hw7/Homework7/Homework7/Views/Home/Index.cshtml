@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section styles{
+    <link rel="stylesheet" href="~/Content/homepage.css" />
+}
+
+<div class="page-container">
+
+    <div class="col-md-2 margin">
+
+
+    </div>
+
+    <div class="col-md-8">
+
+        <div class="row content-container">
+
+            <div class="search-bar-container">
+
+                <form class="form-inline">
+                    <h1>Search Gif</h1>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control mx-sm-3 search-bar" id="search-input">
+                        
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="search-button">Search</button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-2 margin">
+
+
+    </div>
+
+</div>
+
+@section scripts{
+    <script src="~/Scripts/homepage.js"></script>    
+}
