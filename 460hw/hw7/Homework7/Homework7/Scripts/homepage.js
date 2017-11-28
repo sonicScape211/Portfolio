@@ -17,7 +17,7 @@ function search() {
         //Data to be passed to GET function.
         data: { searchInput: searchInput },
 
-        success: function () {
+        success: function (data) {
             alert("Whoop");
             console.log(data);
             //alert(response);

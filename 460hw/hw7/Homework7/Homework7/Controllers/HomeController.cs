@@ -32,7 +32,7 @@ namespace Homework7.Controllers
          * 
          */
         
-        public void Search(string searchInput) {
+        public JsonResult Search(string searchInput) {
 
             //Request encrypted api key from external source.
             //NOTE this needs to be here because this key will not stick around in a field
@@ -53,17 +53,17 @@ namespace Homework7.Controllers
             //StreamReader reader = new StreamReader(dataStream).ReadToEnd();
             //Read it!
             string apiResponse = new StreamReader(dataStream).ReadToEnd();//reader.ReadToEnd();
-            //Debug.WriteLine(apiResponse);
+            Debug.WriteLine(apiResponse);
             //Convert that data stream string, which is already in a JSON format, to a json object
             //JObject jsonResponse = JObject.Parse(apiResponse);
             //Convert the JSON string to a .NET object 
-            //var result = JsonConvert.DeserializeObject(apiResponse);
-            //Debug.WriteLine(result);
+            var result = JsonConvert.DeserializeObject(apiResponse);
+            Debug.WriteLine(result);
             var serializer = new JavaScriptSerializer();
 
-            var data = GiphyData.FromJson(apiResponse);
+            //var data = GiphyData.FromJson(apiResponse);
 
-            //var data = serializer.DeserializeObject(apiResponse);//reader.ReadToEnd()); 
+            var data = serializer.DeserializeObject(apiResponse);
             Debug.WriteLine(apiResponse);
             Debug.WriteLine(data);
             //Close everything up
@@ -72,7 +72,7 @@ namespace Homework7.Controllers
 
 
 
-            //return Json(data, JsonRequestBehavior.AllowGet);
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult About()
