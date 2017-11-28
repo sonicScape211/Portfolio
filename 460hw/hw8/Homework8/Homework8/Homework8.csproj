@@ -149,6 +149,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Db_DOWN.sql" />
+    <Content Include="App_Data\Db_UP.sql" />
+    <Content Include="App_Data\Homework8.mdf" />
+    <Content Include="App_Data\Homework8_log.ldf">
+      <DependentUpon>Homework8.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -187,7 +193,6 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
