@@ -21,7 +21,7 @@ namespace Homework8.Controllers
         }
 
         // GET: Artists/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -59,7 +59,7 @@ namespace Homework8.Controllers
         }
 
         // GET: Artists/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace Homework8.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Name,Id,Birthday,BirthCity")] Artist artist)
+        public ActionResult Edit([Bind(Include = "Id,Name,Birthday,BirthCity")] Artist artist)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Homework8.Controllers
         }
 
         // GET: Artists/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -107,7 +107,7 @@ namespace Homework8.Controllers
         // POST: Artists/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int? id)
         {
             Artist artist = db.Artists.Find(id);
             db.Artists.Remove(artist);
