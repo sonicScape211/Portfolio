@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Homework8.Models.ViewModels.GenreArtworkViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -10,13 +11,14 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <h4>Search by Genre</h4>
+        <ul>
+            @foreach(var item in Model.Genre){
+                <li>
+                    @Html.DisplayFor(model => item.Genre1)
+                </li>       
+             };
+        </ul>
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
