@@ -10,7 +10,7 @@ function search() {
     var searchInput = document.getElementById('search-input').value.trim();
     
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: "/Home/Search",
         //type of data expected back from the server. .ajax will by default try and infer but we will just specify here.
         //dataType: "json",
