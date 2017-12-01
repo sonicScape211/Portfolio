@@ -7,8 +7,8 @@ namespace Homework8.Models.ViewModels
 {
     public class GenreArtworkViewModel
     {
-        public IEnumerable<Artist> Artist { get; set; }
+        public IEnumerable<Artwork> Artwork { get; set; }
         public IEnumerable<Genre> Genre { get; set; }
-
+        public IEnumerable<Classification> Classification { get; set; }
     }
 }

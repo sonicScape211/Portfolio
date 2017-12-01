@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
 using Homework8.Models.ViewModels;
 
 namespace Homework8.Controllers
@@ -15,30 +16,55 @@ namespace Homework8.Controllers
 
         public ActionResult Index()
         {
-            GenreArtworkViewModel completeViewModel = createViewModel(genreArtwork);
+            GenreArtworkViewModel completeViewModel = CreateViewModel(genreArtwork);
             return View(completeViewModel);
         }
 
-        private GenreArtworkViewModel createViewModel(GenreArtworkViewModel viewModel) {
+        /*
+         * Create the initial view model for the homepage. All we will need is the genres currently.
+         */
+        private GenreArtworkViewModel CreateViewModel(GenreArtworkViewModel viewModel)
+        {
 
-            viewModel.Artist = dbContext.Artists.ToList();
             viewModel.Genre = dbContext.Genres.ToList();
 
             return viewModel;
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        /*
+         * Create the custom view model for the partial view that shows the artwork titles
+         * based on the genre provided.
+         */
+        public ActionResult DisplayArtwork(string genre) {
 
-            return View();
+            var viewModel = new GenreArtworkViewModel
+            {
+                Genre = dbContext.Genres.ToList(),
+                Classification = dbContext.Classifications.Where(c => c.Genre == genre)
+            };
+            //This will return a new partial view with the new instance of the viewModel items.
+            //ie. the edited artwork list which has only artworks of a particular genre.
+            return PartialView("_ArtworkView", viewModel);
+
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        /*
+         * This will create a new model for the partial view that displays the artwork's specific
+         * details.
+         */
+        public ActionResult ArtworkDetails(string title) {
 
-            return View();
+            Debug.WriteLine("In the details section");
+            Debug.WriteLine(title);
+
+            var viewModel = new GenreArtworkViewModel
+            {
+                Genre = dbContext.Genres.ToList(),
+                Artwork = dbContext.Artworks.Where(a => a.Title == title)
+            };
+
+            return PartialView("_ArtworkDetails", viewModel);
         }
+
     }
 }

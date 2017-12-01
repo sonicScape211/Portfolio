@@ -1,0 +1,49 @@
+﻿@model Homework8.Models.ViewModels.GenreArtworkViewModel
+
+@if (Model.Classification != null && Model != null)
+{
+    <ul>
+        @foreach (var item in Model.Classification)
+            {
+            <li>
+
+                <button value="@Html.DisplayFor(modelItem => item.Title)" class="artwork-button">
+                    @Html.DisplayFor(model => item.Title)
+
+                </button>
+
+            </li>
+        }
+    </ul>
+}
+
+<!--
+
+Had to put scripts here to get it to load....sorry....    
+
+-->
+<script>
+    $('.artwork-button').on('click', function () {
+
+        var artworkTitle = $(this).val();
+
+        $.ajax({
+
+            type: 'POST',
+            url: '/Home/ArtworkDetails',
+            data: { title: artworkTitle },
+            dataType: 'html',
+            success: function (response) {
+
+                $('#artwork-details').html(response);
+
+            },
+            error: function () {
+                console.log("Error in ajax.");
+            }
+            
+        });
+
+    });
+</script>
+
