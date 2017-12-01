@@ -4,13 +4,14 @@
 
 @if (Model.Artwork != null && Model != null)
 {
+    <h4>Artwork Details</h4>
     <ul>
         @foreach (var item in Model.Artwork)
-            {
+        {
             <li>
     
-                <h4>@Html.DisplayFor(model => item.Title)</h4> 
-                <h4>@Html.DisplayFor(model => item.Artist)</h4>
+                <h4>Title: @Html.DisplayFor(model => item.Title)</h4> 
+                <h4>Artist: @Html.DisplayFor(model => item.Artist)</h4>
 
             </li>
         }
