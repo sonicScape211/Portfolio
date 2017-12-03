@@ -6,7 +6,7 @@
 ### Albums of Homework #8
 [Alice In Chains - Alice In Chains](https://www.youtube.com/watch?v=xFxfHwQrVWY&list=PLJhq8uea0BmYLbvaedD_C4qDuWZLZuQSK)
 
-[Jinsang - Solitude](https://www.youtube.com/watch?v=NMLrVKZXdvE)
+[Cream - Disraeli Gears](https://www.youtube.com/watch?v=OKRYT2ptexY)
 
 [Back to the Homepage](../../)
 
@@ -18,7 +18,7 @@
 
    We needed to create a webpage from a given data model consisting of artists, relevant artworks, their classifications and their genres. Here is a look at the seed data and model we would be working with:
     
-![](/ScreenShots/data-model.PNG)
+![](ScreenShots/data-model.PNG)
     
    I decided to tackle this project with a sectioned approch in which I would complete my data structure completely, move on to page by page functionality and then finally the last styling of the overall site. Alright, let's dive into our solution.
    
@@ -28,12 +28,12 @@
 ![](/)
 
    I created this database in the same way as I created the one for Homework 5 with both an up script and a down script with table specifications and seeding data.
-![](/db_UP.PNG)
+![](ScreenShots/db_UP.PNG)
 
 
    The next section would include the was I would access this information I had just created. I created an initial model for my page to begin working with, but I quickly realized that I would not be able to just work off of this database, but would need to create a view model to edit the information availible to the user at a given time depending on their navigation through the page.
 
-![](/model-view.PNG)
+![](ScreenShots/model-view.PNG)
 
 ### Artist Model CRUD Functionality
 
@@ -145,23 +145,23 @@ $('.genre-button').on('click', function () {
  
  
 ### Homepage
-![](/Homepage.PNG)
+![](ScreenShots/Homepage.PNG)
 
 ### Artist Edit
-![](/EditPage.PNG)
-![](/EditPage2.PNG)
-![](/EditPage3.PNG)
-![](/Delete.PNG)
-![](/AfterDelete.PNG)
+![](ScreenShots/EditPage.PNG)
+![](ScreenShots/EditPage2.PNG)
+![](ScreenShots/EditPage3.PNG)
+![](ScreenShots/Delete.PNG)
+![](ScreenShots/AfterDelete.PNG)
 
 ### Details
-![](/Details.PNG)
+![](ScreenShots/Details.PNG)
 
 ### Artworks
-![](/Artworks.PNG)
+![](ScreenShots/Artworks.PNG)
 
 ### Classifications
-![](/Index.PNG)
+![](ScreenShots/Index.PNG)
  
   [Back to the Homepage](../../)
 
