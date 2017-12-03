@@ -10,15 +10,14 @@ CREATE TABLE [dbo].[Artist]
 CREATE TABLE [dbo].[Artwork]
 (
 	[Id]		INT				NOT NULL	IDENTITY (1,1),
-	[Title]		CHAR(50)		NOT NULL	PRIMARY KEY,
-	[Artist]	CHAR(50)		NOT NULL
+	[Title]		CHAR(50)		NOT NULL	PRIMARY KEY
+
 )
 
 CREATE TABLE [dbo].[Classification]
 (
 	[Id]		INT			NOT NULL	IDENTITY(1,1),
-	[Title]		CHAR(50)	NOT NULL,
-	[Genre]		CHAR(35)	NOT NULL
+
 )
 
 CREATE TABLE [dbo].[Genre]
