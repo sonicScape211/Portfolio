@@ -25,7 +25,7 @@
 ### Database + Models
    The first task here was really to decide how I wanted to implement the database. Here is my final ER diagram of the implemented database.
 
-![](/)
+![](ScreenShots/data-model.PNG)
 
    I created this database in the same way as I created the one for Homework 5 with both an up script and a down script with table specifications and seeding data.
 ![](ScreenShots/db_UP.PNG)
