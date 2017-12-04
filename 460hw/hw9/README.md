@@ -45,8 +45,7 @@ Honestly if you only listen to one of these then make it these guys. This is the
    
    Alright! We are good to go! Go ahead and hit the link to checkout my Azure deployed Website!
    
-  [My Webpage - ArtworksDb](cs460homeworkrealdbserver.database.windows.net)
-
+  [My Webpage - ArtworksDb](http://cs460homeworkreal.azurewebsites.net/)
 
   [Back to the Homepage](../../)
 
