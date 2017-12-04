@@ -1,7 +1,7 @@
-# Artist/Artwork Db - Finals Practice
+# AJAX & API Connections
 
 ## Homework #7
-[Homework Repo](https://github.com/sonicScape211/sonicScape211.github.io/tree/master/460hw/hw6)
+[Homework Repo](https://github.com/sonicScape211/sonicScape211.github.io/tree/master/460hw/hw7)
 
 ### Albums of Homework #7
 [Alice In Chains - Alice In Chains](https://www.youtube.com/watch?v=xFxfHwQrVWY&list=PLJhq8uea0BmYLbvaedD_C4qDuWZLZuQSK)
