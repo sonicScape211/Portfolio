@@ -14,4 +14,7 @@
    * [Homework 3](460hw/hw3)
    * [Homework 4](460hw/hw4)
    * [Homework 5](460hw/hw5)
-
+   * [Homework 6](460hw/hw6)
+   * [Homework 7](460hw/hw7)
+   * [Homework 8](460hw/hw8)
+   * [Homework 9](460hw/hw9)

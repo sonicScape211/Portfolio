@@ -11,7 +11,7 @@
 [Back to the Homepage](../../)
 
   [Previous](../hw7)
-  [Next](../hw8)
+  [Next](../hw9)
 
 ### Overview
    Finally! We are here! The second to last project!!! This one was pretty fun, mainly due to the nature of the project. We were able to bring everything that we have learned, thus far, into this web app: cshtml, JavaScript, AJAX, CSS and many of the main component in MVC like partial views, database accessing and modifying and ViewModels.
@@ -25,7 +25,7 @@
 ### Database + Models
    The first task here was really to decide how I wanted to implement the database. Here is my final ER diagram of the implemented database.
 
-![](/)
+![](ScreenShots/data-model.PNG)
 
    I created this database in the same way as I created the one for Homework 5 with both an up script and a down script with table specifications and seeding data.
 ![](ScreenShots/db_UP.PNG)
@@ -166,5 +166,5 @@ $('.genre-button').on('click', function () {
   [Back to the Homepage](../../)
 
   [Previous](../hw7)
-  [Next](../hw8)
+  [Next](../hw9)
  
