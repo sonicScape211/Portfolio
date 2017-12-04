@@ -11,7 +11,7 @@
 [Back to the Homepage](../../)
 
   [Previous](../hw7)
-  [Next](../hw8)
+  [Next](../hw9)
 
 ### Overview
    Finally! We are here! The second to last project!!! This one was pretty fun, mainly due to the nature of the project. We were able to bring everything that we have learned, thus far, into this web app: cshtml, JavaScript, AJAX, CSS and many of the main component in MVC like partial views, database accessing and modifying and ViewModels.
@@ -166,5 +166,5 @@ $('.genre-button').on('click', function () {
   [Back to the Homepage](../../)
 
   [Previous](../hw7)
-  [Next](../hw8)
+  [Next](../hw9)
  
