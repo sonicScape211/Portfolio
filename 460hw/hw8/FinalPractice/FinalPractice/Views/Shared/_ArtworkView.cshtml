@@ -1,0 +1,42 @@
+﻿@model FinalPractice.Models.ViewModels.ArtworksViewModel
+
+@if (Model.Artwork != null && Model != null)
+{
+    <h4>Artworks</h4>
+    <ul style="list-style-type: none">
+        @foreach (var item in Model.Artwork)
+        {
+            <li>
+
+                <button value="@Html.DisplayFor(modelItem => item.ArtworkID)" class="artwork-button">
+                    @Html.DisplayFor(model => item.ArtworkTitle)
+
+                </button>
+
+            </li>
+        }
+    </ul>
+}
+
+<script>
+    $('.artwork-button').on('click', function () {
+        //get the value of the button just clicked.
+        var artwork = $(this).val();
+
+        $.ajax({
+
+            type: 'POST',
+            url: 'Home/ArtworkDetailSelection',
+            data: { artworkID: artwork },
+            dataType: 'html',
+            success: function (response) {
+                $('#details-container').html(response);
+            },
+            fail: function () {
+                console.log("Failed in AJAX");
+            }
+
+        });
+
+    });
+</script>

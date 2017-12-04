@@ -1,0 +1,45 @@
+﻿@model FinalPractice.Models.ViewModels.ArtworksViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>Select a Genre</h4>
+        <ul style="list-style-type: none">
+            
+            @foreach (var item in Model.Genre)
+            {
+                <li>
+                    @*
+                        Set the value of each button to the id of the genre to be able to link this genre to a classification
+                        and then use the classification to link to a artwork title.
+                    *@
+                    <button value="@Html.DisplayFor(modelItem => item.GenreID)" class="genre-button">
+
+                        @Html.DisplayFor(modelItem => item.Genre1)
+
+                    </button>
+
+                </li>
+            }
+        </ul>
+        
+    </div>
+    <div class="col-md-4" id="artworks-container">
+        
+    </div>
+    <div class="col-md-4" id="details-container">
+        
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/homepage.js"></script>    
+}

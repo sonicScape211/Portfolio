@@ -1,0 +1,20 @@
+﻿@model FinalPractice.Models.ViewModels.ArtworksViewModel
+
+
+<h4>Artwork Details</h4>
+
+@foreach (var item in Model.Artwork)
+{
+
+    <p>Title: @Html.DisplayFor(model => item.ArtworkTitle)</p>
+
+
+}
+<br />
+
+@foreach (var item in Model.Artist)
+{
+    <p>Artist: @Html.DisplayFor(model => item.ArtistName)</p>
+        
+}
+
