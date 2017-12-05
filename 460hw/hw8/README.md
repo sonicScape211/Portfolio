@@ -70,38 +70,44 @@ function validateForm(event) {
 ### AJAX
 In the last section we needed to use AJAX to perform page/menu navigation and display. We needed to create a user interfaces in which the user would be able to click on genres of  artwork, which would then show the art work associated with that genre and then the user could click on specific, filtered artworks to display the details of the painting. To do this I decided to pass in a partial view to my AJAX success function to provide a nice and readable controller and also allow me to reuse these menu views in other sections of the webpage later if I decided to.
 ```csharp
-/*
-* Create the custom view model for the partial view that shows the artwork titles
-* based on the genre provided.
-*/
-public ActionResult DisplayArtwork(string genre) {
+public PartialViewResult GenreSelection(int genreID) {
 
-var viewModel = new GenreArtworkViewModel
-{
-Genre = dbContext.Genres.ToList(),
-Classification = dbContext.Classifications.Where(c => c.Genre == genre)
-};
-//This will return a new partial view with the new instance of the viewModel items.
-//ie. the edited artwork list which has only artworks of a particular genre.
-return PartialView("_ArtworkView", viewModel);
+            var viewModel = new ArtworksViewModel();
 
-}
+            viewModel.Classification = dbContext.Artworks
+                                 .Join(dbContext.Classifications,
+                                 a => a.ArtworkID,
+                                 c => c.GenreID,
+                                 (a, c) => new { a, c })
+                                 .Where(z => z.c.GenreID == genreID)
+                                 .Select(z => z.c);
+                                 
+            viewModel.Artwork = dbContext.Artworks
+                                .Join(viewModel.Classification,
+                                a => a.ArtworkID,
+                                c => c.ArtworkID,
+                                (a, c) => new { a, c })
+                                .Where(z => z.a.ArtworkID == z.c.ArtworkID)
+                                .Select(z => z.a);
+
+            return PartialView("_ArtworkView", viewModel);
+        }
 ```
  Partial View:
  
  ```csharp
- @model Homework8.Models.ViewModels.GenreArtworkViewModel
+@model FinalPractice.Models.ViewModels.ArtworksViewModel
 
-@if (Model.Classification != null && Model != null)
+@if (Model.Artwork != null && Model != null)
 {
     <h4>Artworks</h4>
-    <ul>
-        @foreach (var item in Model.Classification)
-            {
+    <ul style="list-style-type: none">
+        @foreach (var item in Model.Artwork)
+        {
             <li>
 
-                <button value="@Html.DisplayFor(modelItem => item.Title)" class="artwork-button">
-                    @Html.DisplayFor(model => item.Title)
+                <button value="@Html.DisplayFor(modelItem => item.ArtworkID)" class="artwork-button">
+                    @Html.DisplayFor(model => item.ArtworkTitle)
 
                 </button>
 
@@ -113,32 +119,24 @@ return PartialView("_ArtworkView", viewModel);
    AJAX CALL
    ```javascript
 $('.genre-button').on('click', function () {
-
-    //get the value of the button. This will be the genre.
-    var genreString = $(this).val();
-
-    console.log(genreString);
+    //get the value of the button just clicked.
+    var genre = $(this).val();
 
     $.ajax({
 
         type: 'POST',
-        url: '/Home/DisplayArtwork',
-        data: { genre: genreString },
+        url: 'Home/GenreSelection',
+        data: {genreID : genre},
         dataType: 'html',
-        success: function(response) {
-            console.log("success!");
-            
-            $('#artwork-container').html(response);
-            
-            //Show the artwork section of the html here.
-            //response probably wont be anything.
+        success: function (response) {
+            $('#artworks-container').html(response);
         },
-        error: function() {
-            console.log("Some error in ajax.");
+        fail: function () {
+            console.log("Failed in AJAX");
         }
 
     });
-    
+
 });
 ```
  Overall this project was really enjoyable. It gave me a chance to really improve on my skills with this aspects of webapp development. Rather than focusing on learning and retaining syntax, I was able to look towards design issues and project planning which made this lab go much smoother!
