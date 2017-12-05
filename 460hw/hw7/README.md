@@ -4,9 +4,9 @@
 [Homework Repo](https://github.com/sonicScape211/sonicScape211.github.io/tree/master/460hw/hw7)
 
 ### Albums of Homework #7
-[Alice In Chains - Alice In Chains](https://www.youtube.com/watch?v=xFxfHwQrVWY&list=PLJhq8uea0BmYLbvaedD_C4qDuWZLZuQSK)
+[Radiohead - OK Computer](https://www.youtube.com/watch?v=fHiGbolFFGw&list=PLJ9uMbcoY6lL3gXQMuPUXhzno112edEJX)
 
-[Cream - Disraeli Gears](https://www.youtube.com/watch?v=OKRYT2ptexY)
+[Foo Fighters - The Color and the Shape](https://www.youtube.com/watch?v=vJlhMLyPIRw&t=1504s)
 
 [Back to the Homepage](../../)
 
