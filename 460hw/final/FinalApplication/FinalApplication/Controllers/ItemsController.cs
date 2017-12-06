@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using FinalApplication.Models;
 using FinalApplication.Models.ViewModels;
+using System.Diagnostics;
 
 namespace FinalApplication.Controllers
 {
@@ -39,6 +40,17 @@ namespace FinalApplication.Controllers
            
             
             return View(item);
+        }
+
+        /*
+         * This will check the current database to see if any new bids have been posted and
+         * then return the updated model to the view.
+         */
+        public PartialViewResult UpdateBids()
+        {
+            Item item = db.Items.Find(1001);
+
+            return PartialView("__Bids", item);
         }
 
         // GET: Items/Create

@@ -1,19 +1,25 @@
-﻿$(document).ready(function () {
+﻿
 
-    var intervalID = window.setInterval(getBids, 5000)
+var ajax_call = function () {
+    $.ajax({
 
-    function getBids() {
+        type: 'POST',
+        url: '/Items/UpdateBids',
+        dataType: 'html',
+        success: function (response) {
+            console.log("Yep");
 
-        var 
 
-        $.ajax({
+        },
+        error: function () {
 
-            type: 'POST',
-            url: '',
-            data{}
+            console.log("Nope");
+        }
 
-        });
-    }
-    
+    });
+}
 
-});
+var interval = 1000 * 5;
+
+window.setInterval(ajax_call, interval)
+

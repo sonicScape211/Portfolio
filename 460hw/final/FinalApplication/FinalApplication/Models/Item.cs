@@ -15,7 +15,7 @@ namespace FinalApplication.Models
             Bids = new HashSet<Bid>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ItemID { get; set; }
 
         [Required]

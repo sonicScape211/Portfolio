@@ -1,0 +1,12 @@
+﻿@model FinalApplication.Models.Item
+
+<h4>Bids</h4>
+@foreach (var item in Model.Bids)
+{
+    @Html.DisplayFor(modelItem => item.Price)
+    <br />
+                @Html.DisplayFor(modelITem => item.Buyer.BuyerName)
+                <br />
+                @Html.DisplayFor(modelItem => item.BidTime)
+
+}

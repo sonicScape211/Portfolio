@@ -9,6 +9,7 @@
 <div>
     <h4>Item</h4>
     <hr />
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Seller.SellerName)
@@ -34,9 +35,32 @@
             @Html.DisplayFor(model => model.ItemDescription)
         </dd>
 
+
+        <dd>
+            <h4>Bids</h4>
+            @foreach (var item in Model.Bids) {
+                @Html.DisplayFor(modelItem => item.Price)
+                <br />
+                @Html.DisplayFor(modelITem => item.Buyer.BuyerName)
+                <br />
+                @Html.DisplayFor(modelItem => item.BidTime)
+
+            }
+        </dd>
+
+        
+        @{ViewData["id"] = Model.ItemID;}
     </dl>
+
+    <div id="updated-bids-container">
+
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ItemID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+<script src="~/Scripts/DetailsScript.js"></script>
+
